@@ -12,6 +12,7 @@ use App\Models\Header;
 use App\Models\Footer;
 use App\Models\Usefulllink;
 use App\Models\Sociallink;
+use App\Models\Frequentlyasked;
 use Illuminate\Support\Facades\View;
 use Illuminate\Cache\RateLimiting\Limit;
 
@@ -89,6 +90,13 @@ class AppServiceProvider extends ServiceProvider
        {
         $data=Sociallink::all(); 
         View::share('sociallink', $data);
+       });
+
+
+       View::composer('*', function($view8)
+       {
+        $data=Frequentlyasked::all(); 
+        View::share('frequentlyasked', $data);
        });
     }
 }

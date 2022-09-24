@@ -69,12 +69,9 @@
                                     <h2>Flickr Photos</h2>
                                 </div>
                                 <div class="clearfix">
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-1.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-1.jpg')}}" alt=""></a></figure>
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-2.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-2.jpg')}}" alt=""></a></figure>
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-3.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-3.jpg')}}" alt=""></a></figure>
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-4.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-4.jpg')}}" alt=""></a></figure>
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-5.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-5.jpg')}}" alt=""></a></figure>
-                                    <figure class="image"><a href="{{url('frontend/images/resource/footer-gallery-6.jpg')}}" class="lightbox-image" title="Caption Here"><img src="{{url('frontend/images/resource/footer-gallery-6.jpg')}}" alt=""></a></figure>
+                                @foreach ($frequentlyasked as $val)
+                                    <figure class="image"><a href="{{ asset('img/' . $val->img) }}" class="lightbox-image" title="Caption Here"><img src="{{ asset('img/' . $val->img) }}" alt=""></a></figure>
+                                @endforeach
                                 </div>
                             </div>
                         </div>

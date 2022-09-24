@@ -366,8 +366,7 @@
 <!--Default Section-->
 <section class="default-section">
     <div class="auto-container">
-        <div class="row clearfix">
-            
+        <div class="row clearfix">  
             <!--Text Column-->
             <div class="column text-column col-md-6 col-sm-12 col-xs-12">
                 <div class="inner-box">
@@ -379,107 +378,59 @@
                     <!--featured-gallery-->
                     <div class="featured-gallery">
                         <div class="row clearfix">
-                        
                             <!--featured-image-box-->
                             <div class="featured-image-box col-md-12 col-sm-12 col-xs-12">
                                 <figure class="image">
-                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-1.jpg')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-1.jpg')}}" alt="" /></a>
+                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-1.webp')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-1.webp')}}" alt="" /></a>
                                 </figure>
                             </div>
                             
                             <!--featured-image-box-->
                             <div class="featured-image-box col-md-6 col-sm-6 col-xs-12">
                                 <figure class="image">
-                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-2.jpg')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-2.jpg')}}" alt="" /></a>
+                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-2.webp')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-2.webp')}}" alt="" /></a>
                                 </figure>
                             </div>
                             
                             <!--featured-image-box-->
                             <div class="featured-image-box col-md-6 col-sm-6 col-xs-12">
                                 <figure class="image">
-                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-3.jpg')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-3.jpg')}}" alt="" /></a>
+                                    <a class="lightbox-image" href="{{url('frontend/images/resource/featured-image-3.webp')}}" title="Image Caption Here"><img src="{{url('frontend/images/resource/featured-image-3.webp')}}" alt="" /></a>
                                 </figure>
                             </div>
-                            
                         </div>
                     </div>
-                    
                 </div>
             </div>
             
             <!--Accordions Column-->
             <div class="column col-md-6 col-sm-12 col-xs-12">
                 <div class="inner-box">
-                
                     <div class="sec-title-one">
                         <h2>Frequently Asked Questions</h2>
                     </div>
-                
                     <!--Accordion Box-->
                     <ul class="accordion-box">
-                        
                         <!--Block-->
-                        <li class="accordion block wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Why do you license technologies?</div>
-                            <div class="acc-content current">
+                        @foreach($frequentlyasked as $key=>$val)
+                        <li class="accordion block wow fadeInUp animated" data-wow-delay="{{$key==0?0:$key*100}}ms" data-wow-duration="1500ms">
+                            <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$val->question}}</div>
+                            <div class="acc-content {{$key==0 ? 'current':''}}">
                                 <div class="content clearfix">
-                                    <figure class="image"><img src="{{url('frontend/images/resource/featured-thumb-1.jpg')}}" alt=""></figure>
-                                    <p>The year is and launches the last of that americas deep space probes and we will do it our our way make all come true these days are all Happy and free these days are all to share.</p>
+                                    <figure class="image"><img src="{{ asset('img/' . $val->img) }}" alt=""></figure>
+                                    <p>{{$val->answer}}</p>
                                 </div>
                             </div>
                         </li>
-                        
-                        <!--Block-->
-                        <li class="accordion block wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div> Do you license to startup companies?</div>
-                            <div class="acc-content">
-                                <div class="content clearfix">
-                                    <figure class="image"><img src="{{url('frontend/images/resource/featured-thumb-1.jpg')}}" alt=""></figure>
-                                    <p>The year is and launches the last of that americas deep space probes and we will do it our our way make all come true these days are all Happy and free these days are all to share.</p>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <!--Block-->
-                        <li class="accordion block wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div> Do you advise or fund companies?</div>
-                            <div class="acc-content">
-                                <div class="content clearfix">
-                                    <figure class="image"><img src="{{url('frontend/images/resource/featured-thumb-1.jpg')}}" alt=""></figure>
-                                    <p>The year is and launches the last of that americas deep space probes and we will do it our our way make all come true these days are all Happy and free these days are all to share.</p>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <!--Block-->
-                        <li class="accordion block wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div> How do we manage and monitor the license agreement?</div>
-                            <div class="acc-content">
-                                <div class="content clearfix">
-                                    <figure class="image"><img src="{{url('frontend/images/resource/featured-thumb-1.jpg')}}" alt=""></figure>
-                                    <p>The year is and launches the last of that americas deep space probes and we will do it our our way make all come true these days are all Happy and free these days are all to share.</p>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <!--Block-->
-                        <li class="accordion block wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div> Where can I find more information?</div>
-                            <div class="acc-content">
-                                <div class="content clearfix">
-                                    <figure class="image"><img src="{{url('frontend/images/resource/featured-thumb-1.jpg')}}" alt=""></figure>
-                                    <p>The year is and launches the last of that americas deep space probes and we will do it our our way make all come true these days are all Happy and free these days are all to share.</p>
-                                </div>
-                            </div>
-                        </li>
-                        
+                        @endforeach
                     </ul><!--End Accordion Box-->
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
+
+
 
 <!--tabs-section-->
 <section class="tabs-section">
@@ -533,11 +484,11 @@
                             <div class="text-content">
                                 <div class="text" style="text-align: justify;">To build value, deliver performance and demonstrate leadership in the world of automation, By assuming responsibility and by inculcating our core values in day to day operations for the end goal of satisfied clients.</div>
                                 <div class="row clearfix">
-                                    <div class="col-md-6 col-sm-6">
+                                    <div class="col-md-12 col-sm-12">
                                         <ul class="list-style-one">
-                                            <li><span class="fa fa-check-square-o"></span> Promises something for everyone</li>
-                                            <li><span class="fa fa-check-square-o"></span> Feels so right it cant be wrong</li>
-                                            <li><span class="fa fa-check-square-o"></span> Fellow and they knew it</li>
+                                        @foreach($mission as $val)
+                                            <li><span class="fa fa-check-square-o"></span> {{$val->mission}}</li>
+                                        @endforeach
                                         </ul>
                                     </div>  
                                 </div>
@@ -549,11 +500,11 @@
                             <div class="text-content">
                                 <div class="text" style="text-align: justify;">To become the world’s premier automation products, services and Project management organization by achieving extraordinary results for our customers, building satisfying careers for our employees and earning a fair return on the value we deliver.</div>
                                 <div class="row clearfix">
-                                    <div class="col-md-6 col-sm-6">
+                                    <div class="col-md-12 col-sm-12">
                                         <ul class="list-style-one">
-                                            <li><span class="fa fa-check-square-o"></span> Promises something for everyone</li>
-                                            <li><span class="fa fa-check-square-o"></span> Feels so right it cant be wrong</li>
-                                            <li><span class="fa fa-check-square-o"></span> Fellow and they knew it</li>
+                                        @foreach($vission as $val)
+                                            <li><span class="fa fa-check-square-o"></span> {{$val->vission}}</li>
+                                        @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -562,16 +513,16 @@
                     </div>
                 </div>
             </div>
-            
             <div class="column col-lg-5  col-md-6 col-sm-8 xs-12">
                 <div class="image-box">
-                    <img src="{{url('frontend/images/resource/tab-image.jpg')}}" alt="" />
+                    <img src="{{url('frontend/images/resource/tab-image.webp')}}" alt="" />
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
+
+
 
 <!--testimonial-section-->
 <section class="testimonial-section">
@@ -586,76 +537,65 @@
                 <!--Carousel Outer-->
                 <div class="carousel-outer">
                     <div class="single-item-carousel">
-    
+                        @foreach($testimonial as $val)
                         <!--testimonial box-->
                         <div class="testimonial-box">
-                            <div class="text"><span class="fa fa-quote-left"></span>The way we all became the Brady Bunch and you know where you were then be to end the mate was a mighty sailing man the skipper brave and sure five passengers set sail that day for a three hour tour a three hour tour why do we always come here the skipper brave and sure five passengers.<span class="fa fa-quote-right"></span></div>
+                            <div class="text" style="text-align: justify;"><span class="fa fa-quote-left"></span>
+                                {!! $val->description !!}
+                                <span class="fa fa-quote-right"></span>
+                            </div>
                             <!--author-info-->
                             <div class="author-info">
                                 <figure class="image">
-                                    <img src="{{url('frontend/images/resource/author-thumb-1.jpg')}}" alt="" />
+                                    <img src="{{url('img/'.$val->img)}}" alt="" />
                                 </figure>
-                                <h3>George Mc Mahon</h3>
-                                <div class="designation">Co-Founder</div>
-                                
+                                <h3>{{$val->name}}</h3>
+                                <div class="designation">{{$val->designation}}</div>  
                             </div>
                         </div>
-                        
-                        <div class="testimonial-box">
-                            <div class="text"><span class="fa fa-quote-left"></span>The way we all became the Brady Bunch and you know where you were then be to end the mate was a mighty sailing man the skipper brave and sure five passengers set sail that day for a three hour tour a three hour tour why do we always come here the skipper brave and sure five passengers.<span class="fa fa-quote-right"></span></div>
-                            <div class="author-info">
-                                <figure class="image">
-                                    <img src="{{url('frontend/images/resource/author-thumb-1.jpg')}}" alt="" />
-                                </figure>
-                                <h3>George Mc Mahon</h3>
-                                <div class="designation">Co-Founder</div> 
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
             
             <div class="fact-counter-column col-md-4 col-sm-12 col-xs-12">
                 <div class="fact-counter">
-            <div class="clearfix">
-            
-                <!--Column-->
-                <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
-                    <div class="inner">
-                        <div class="count-outer">
-                            <span class="icon-box"><span class="fa fa-star-o"></span></span>
-                            <span class="count-text" data-speed="1000" data-stop="10">0</span>
+                    <div class="clearfix">
+                        <!--Column-->
+                        <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
+                            <div class="inner">
+                                <div class="count-outer">
+                                    <span class="icon-box"><span class="fa fa-star-o"></span></span>
+                                    <span class="count-text" data-speed="1000" data-stop="10">0</span>
+                                </div>
+                                <h4 class="counter-title">Years of Excellence</h4>
+                            </div>
                         </div>
-                        <h4 class="counter-title">Years of Excellence</h4>
+                        
+                        <!--Column-->
+                        <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
+                            <div class="inner">
+                                <div class="count-outer">
+                                    <span class="icon-box"><span class="flaticon-museum"></span></span>
+                                    <span class="count-text" data-speed="1000" data-stop="15">0</span>
+                                </div>
+                                <h4 class="counter-title">Global Branches</h4>
+                            </div>
+                        </div>
+                        
+                        <!--Column-->
+                        <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
+                            <div class="inner">
+                                <div class="count-outer">
+                                    <span class="icon-box"><span class="flaticon-medal"></span></span>
+                                    <span class="count-text" data-speed="1000" data-stop="10">0</span>
+                                </div>
+                                <h4 class="counter-title">Promoted Awards</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!--Column-->
-                <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
-                    <div class="inner">
-                        <div class="count-outer">
-                            <span class="icon-box"><span class="flaticon-museum"></span></span>
-                            <span class="count-text" data-speed="1000" data-stop="15">0</span>
-                        </div>
-                        <h4 class="counter-title">Global Branches</h4>
-                    </div>
-                </div>
-                
-                <!--Column-->
-                <div class="column counter-column wow fadeIn" data-wow-duration="0ms">
-                    <div class="inner">
-                        <div class="count-outer">
-                            <span class="icon-box"><span class="flaticon-medal"></span></span>
-                            <span class="count-text" data-speed="1000" data-stop="10">0</span>
-                        </div>
-                        <h4 class="counter-title">Promoted Awards</h4>
-                    </div>
-                </div>
-                
             </div>
-        </div>
-            </div>
-            
         </div>
     </div>
 </section>
@@ -701,7 +641,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
        
     $("#snd_newsletter").click(function(){

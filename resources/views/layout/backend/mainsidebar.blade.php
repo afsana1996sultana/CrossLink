@@ -140,6 +140,43 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-book-open"></i>
+                  <p>Mission & Vission
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('/mission')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Mission</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{url('/vission')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Vission</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url('/testimonial')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Testimonial</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url('/frequently-asked-question')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Frequently Asked Questions</p>
+                </a>
+              </li>
             </ul>
           </li>
 

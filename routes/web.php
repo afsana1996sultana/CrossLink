@@ -10,6 +10,10 @@ use App\Http\Controllers\Admins\UsefulllinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\MessageController;
 use App\Http\Controllers\Admins\NewsletterController;
+use App\Http\Controllers\Admins\MissionController;
+use App\Http\Controllers\Admins\VissionController;
+use App\Http\Controllers\Admins\TestimonialController;
+use App\Http\Controllers\Admins\FrequentlyaskedController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\CareerController;
@@ -156,6 +160,37 @@ Route::resource('social-link', App\Http\Controllers\Admins\SociallinkController:
 Route::get('edit-social-link/{id}', [SociallinkController::class, 'edit']);
 Route::put('social-link-update', [SociallinkController::class, 'update']);
 Route::delete('delete-social-link', [SociallinkController::class, 'destroy']);
+
+
+
+//////////////////////Mission/////////////////////////////////
+Route::resource('mission', App\Http\Controllers\Admins\MissionController::class);
+Route::get('edit-mission/{id}', [MissionController::class, 'edit']);
+Route::put('mission-update', [MissionController::class, 'update']);
+Route::delete('delete-mission', [MissionController::class, 'destroy']);
+
+
+
+//////////////////////Vission/////////////////////////////////
+Route::resource('vission', App\Http\Controllers\Admins\VissionController::class);
+Route::get('edit-vission/{id}', [VissionController::class, 'edit']);
+Route::put('vission-update', [VissionController::class, 'update']);
+Route::delete('delete-vission', [VissionController::class, 'destroy']);
+
+
+//////////////////////Testimonial/////////////////////////////////
+Route::resource('testimonial', App\Http\Controllers\Admins\TestimonialController::class);
+Route::get('edit-testimonial/{id}', [TestimonialController::class, 'edit']);
+Route::put('testimonial-update', [TestimonialController::class, 'update']);
+Route::delete('delete-testimonial', [TestimonialController::class, 'destroy']);
+
+
+
+//////////////////////Frequently-Asked-Question/////////////////////////////////
+Route::resource('frequently-asked-question', App\Http\Controllers\Admins\FrequentlyaskedController::class);
+Route::get('edit-frequently-asked-question/{id}', [FrequentlyaskedController::class, 'edit']);
+Route::put('frequently-asked-question-update', [FrequentlyaskedController::class, 'update']);
+Route::delete('delete-frequently-asked-question', [FrequentlyaskedController::class, 'destroy']);
 
 
 ////////////////////User/////////////////////////
