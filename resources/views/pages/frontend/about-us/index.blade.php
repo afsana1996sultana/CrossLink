@@ -8,7 +8,7 @@
 </style>
 
 <!--Page Title-->
-<section class="page-title" style="background-image:url(images/background/featured-2-bg.jpg);">
+<section class="page-title" style="background-image:url('frontend/images/background/featured-2-bg.jpg');">
     <div class="auto-container">
         <h1>About</h1>
     </div>

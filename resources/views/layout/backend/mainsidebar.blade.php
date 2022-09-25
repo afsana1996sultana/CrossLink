@@ -116,7 +116,22 @@
             </ul>
           </li>
 
-
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Product Range
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/product')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -213,90 +228,6 @@
             </ul>
           </li>
 
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fas fa-globe"></i><span> Manage Website</span></a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item"><a class="nav-link" href="{{url('topbar/1/edit')}}">Topbar</a></li>
-              <li class=""><a class="nav-link" href="{{url('/slider')}}">Slider</a></li>
-              <li class=""><a class="nav-link" href="{{url('home-page/1/edit')}}">Home Page</a></li>
-              <li class=""><a class="nav-link" href="{{url('home-visibility/1/edit')}}">Home Page One Visibility</a></li>
-              <li class=""><a class="nav-link" href="{{url('menu-visibility')}}">Menu visibility</a></li>
-              <li class=""><a class="nav-link" href="{{url('sub-menu')}}">Sub Menu</a></li>
-              <li class=""><a class="nav-link" href="{{url('shop-page/1/edit')}}">Shop Page</a></li>
-              <li class=""><a class="nav-link" href="{{url('/show-homepage')}}">Show Homepage</a></li>
-              <li class=""><a class="nav-link" href="{{url('/service')}}">Service</a></li>
-              <li class=""><a class="nav-link" href="{{url('seller-condition/1/edit')}}">Seller Conditions</a></li>
-              <li class=""><a class="nav-link" href="{{url('announcement/1/edit')}}">Announcement</a></li>
-              <li class=""><a class="nav-link" href="{{url('/mega-menu-category')}}">Mega Menu</a></li>
-              <li class=""><a class="nav-link" href="{{url('banner-image')}}">Banner Image</a></li>
-              <li class=""><a class="nav-link" href="{{url('product-section')}}">Product Show Section</a></li>
-              <li class=""><a class="nav-link" href="{{url('/brand-partner')}}">Brand Partner</a></li>
-              <li class=""><a class="nav-link" href="{{url('default-avatar/1/edit')}}">Default Avatar</a></li> 
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                About Us
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/aboutus')}}" class="nav-link">
-                  <i class="nav-icon fa fa-user"></i>
-                  <p>About</p> 
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{url('/director')}}" class="nav-link">
-                  <i class="nav-icon fa fa-user"></i>
-                  <p>Board Of Directors</p> 
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{url('/mission')}}" class="nav-link">
-                  <i class="nav-icon fa fa-book-open"></i>
-                  <p>Mission/Vission</p> 
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{url('/frontlogo')}}" class="nav-link">
-                  <i class="nav-icon fas fa-tree"></i>
-                  <p>Logo</p> 
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-book-open"></i>
-                  <p>Our Team
-                  <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url('/team')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Lead Team Member</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('/teammember')}}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Other Team Member</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
 
           <!-- <li class="nav-item">
             <a href="#" class="nav-link">

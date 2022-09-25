@@ -14,12 +14,14 @@ use App\Http\Controllers\Admins\MissionController;
 use App\Http\Controllers\Admins\VissionController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\FrequentlyaskedController;
+use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\ProductcategoryController;
 use App\Http\Controllers\Frontend\ProductsubcategoryController;
+use App\Http\Controllers\Frontend\ProductdetailController;
 use App\Http\Controllers\Admins\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -69,6 +71,10 @@ Route::get('/career',[CareerController::class,'index' ]);
 Route::get('/news',[NewsController::class,'index' ]);
 
 
+///////////////////////Product/////////////////////////////////
+Route::resource('product', App\Http\Controllers\Admins\ProductController::class);
+Route::delete('delete-product', [ProductController::class, 'destroy']);
+
 
 ////////////////////Product-Category/////////////////////////
 Route::get('product_category/{slug}', [ProductcategoryController::class, 'product_category']);
@@ -76,6 +82,10 @@ Route::get('product_category/{slug}', [ProductcategoryController::class, 'produc
 
 ////////////////////Product-Sub-Category/////////////////////////
 Route::get('product_sub_category/{slug}', [ProductsubcategoryController::class, 'product_sub_category']);
+
+
+////////////////////Product-Details/////////////////////////
+Route::get('product_details/{slug}', [ProductdetailController::class, 'product_details']);
 
 
 ////////////////////Message/////////////////////////

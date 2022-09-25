@@ -418,7 +418,7 @@
                             <div class="acc-content {{$key==0 ? 'current':''}}">
                                 <div class="content clearfix">
                                     <figure class="image"><img src="{{ asset('img/' . $val->img) }}" alt=""></figure>
-                                    <p>{{$val->answer}}</p>
+                                    <p class="text" style="text-align: justify;">{{$val->answer}}</p>
                                 </div>
                             </div>
                         </li>

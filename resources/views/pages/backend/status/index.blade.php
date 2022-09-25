@@ -30,7 +30,7 @@
                                 <thead>
                                     <tr>
                                         <th class="sorting sorting_asc">SN</th>
-                                        <th class="sorting">status</th>
+                                        <th class="sorting">Status</th>
                                         <th class="sorting">Action</th>
                                     </tr>
                                 </thead>
