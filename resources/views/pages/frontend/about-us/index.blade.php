@@ -33,12 +33,13 @@
 <section class="industry-section">
     <div class="auto-container">
         <div class="row clearfix">
+            @foreach ($about as $val)
             <div class="column left-column col-md-6 col-sm-12 col-xs-12" style="padding-top: 60px;">
                 <!--video-box-->
                 <div class="box-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <figure class="image">
                         <a class="lightbox-image" href="" title="Image Caption Here">
-                        <img src="{{url('frontend/images/resource/head_ofc.jpg')}}" alt="" /></a>
+                        <img src="{{ asset('img/' . $val->img1) }}" alt="" /></a>
                     </figure>
                 </div>
             </div>
@@ -46,22 +47,13 @@
                 <!--content-column-->
                 <div class="content-column">
                     <div class="sec-title-one">
-                        <h2>Company Overview</h2>
-                        <h4 style="font-weight: bold;">TOTAL SOLUTION OF INDUSTRIAL AUTOMATION AND ELECTRICAL UNDER ONE ROOF</h4>
+                        <h2>{{ $val->header1 }}</h2>
+                        <h4 style="font-weight: bold;">{{ $val->title1 }}</h4>
                     </div> 
-                    <h4 style="color: red;">Precise Automation & Controls Pvt Ltd Vadodara</h4>
-                    <div class="text" style="text-align: justify;">We are gold channel partner of ABB who is the world leader in the field 
-                        of Industrial Automation. We provide wide array of Engineering Solutions and Services. 
-                        Our business primarily in to field of electrical systems and industrial automation. 
-                        We are system integrator of ABB for AC/DC & Servo drives, motors, PLC and SCADA, DCS, 
-                        Switchgear and instrumentation. We are Level 3 Certified Drive division channel partner 
-                        for control of automation products.We are manufacturer of all types of Electrical & 
-                        automation control panels like MCC, PCC, PDB, ACDB, LDB, PMCC, IMCC, APFC, Furnace
-                        Control, Chiller Control, Damper Control, Batch House, Drive Panels, PLC
-                        panel, DCS panel, Draw out type intelligent panel, Synchronizing panel etc.
-                    </div>
+                    <div class="text" style="text-align: justify;">{!! $val->long_description1 !!}</div> 
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -71,19 +63,15 @@
 <section class="industry-section">
     <div class="auto-container">
         <div class="row clearfix">
+            @foreach ($about as $val)
             <div class="column col-md-6 col-sm-12 col-xs-12">
                 <!--content-column-->
                 <div class="content-column">
                     <div class="sec-title-one">
-                        <h4 style="color: red;">OUR VALUES</h4>
-                        <h2 style="font-weight: bold;">Our Mission & Our Motto</h2>
+                        <h4 style="color: red;">{{ $val->title2 }}</h4>
+                        <h2 style="font-weight: bold;">{{ $val->header2 }}</h2>
                     </div> 
-                    <p style="font-size: 18px;">* To build value, performance and leadership into Electrical &
-                        Automation world, responsibility, respect and determination are
-                        key.</p>
-
-                    <p style="font-size: 18px;">* Our motto is to shift our esteemed customer in a comfort zone by
-                        giving excellent & timely services</p>
+                    <div class="text" style="font-size: 18px;">{!! $val->long_description2 !!}</div> 
                 </div>
             </div>
 
@@ -92,10 +80,11 @@
                 <div class="box-column wow slideInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <figure class="image">
                         <a class="lightbox-image" href="" title="Image Caption Here">
-                        <img src="{{url('frontend/images/resource/industry-generic-1.jpg')}}" alt="" /></a>
+                        <img src="{{ asset('img/' . $val->img2) }}" alt="" /></a>
                     </figure>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </section>

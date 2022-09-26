@@ -15,6 +15,7 @@ use App\Http\Controllers\Admins\VissionController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\FrequentlyaskedController;
 use App\Http\Controllers\Admins\ProductController;
+use App\Http\Controllers\Admins\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\CareerController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\ProductcategoryController;
 use App\Http\Controllers\Frontend\ProductsubcategoryController;
 use App\Http\Controllers\Frontend\ProductdetailController;
+use App\Http\Controllers\Frontend\BlogdetailController;
 use App\Http\Controllers\Admins\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,6 +88,10 @@ Route::get('product_sub_category/{slug}', [ProductsubcategoryController::class, 
 
 ////////////////////Product-Details/////////////////////////
 Route::get('product_details/{slug}', [ProductdetailController::class, 'product_details']);
+
+
+////////////////////Blog-Details/////////////////////////
+Route::get('blog_details/{slug}', [BlogdetailController::class, 'blog_details']);
 
 
 ////////////////////Message/////////////////////////
@@ -156,6 +162,16 @@ Route::resource('header', App\Http\Controllers\Admins\HeaderController::class);
 
 ////////////////////Footer/////////////////////////////////
 Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
+
+
+////////////////////About/////////////////////////////////
+Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
+
+
+///////////////////////Blog/////////////////////////////////
+Route::resource('blog-list', App\Http\Controllers\Admins\BlogController::class);
+Route::delete('delete-blog-list', [BlogController::class, 'destroy']);
+
 
 
 //////////////////////Usefull-Link/////////////////////////////////

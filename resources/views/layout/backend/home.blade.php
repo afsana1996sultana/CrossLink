@@ -86,6 +86,7 @@
 		<script src="{{url('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 		<!-- overlayScrollbars -->
 		<script src="{{url('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+		
 		<!-- AdminLTE App -->
 		<script src="{{url('backend/dist/js/adminlte.js')}}"></script>
 		<!-- AdminLTE for demo purposes -->
@@ -117,32 +118,30 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js" integrity="sha512-cJMgI2OtiquRH4L9u+WQW+mz828vmdp9ljOcm/vKTQ7+ydQUktrPVewlykMgozPP+NUBbHdeifE6iJ6UVjNw5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		@yield('scripts')
 <script>
-  $(function () {
-	  
-	$(document).ready(function() {
-  	$('.summernote').summernote();
+  $(function () { 
+		$(document).ready(function() {
+			$('.summernote').summernote();
+		});
+		
+		// Summernote
+		$('#summernote').summernote()
+
+	})
+
+	$(function () {
+		$("#example1").DataTable({
+		"responsive": true, "lengthChange": false, "autoWidth": false,
+		"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+		}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+		$('#example2').DataTable({
+		"paging": true,
+		"lengthChange": false,
+		"ordering": true,
+		"info": true,
+		"autoWidth": false,
+		"responsive": true,
+		});
 	});
-	
-    // Summernote
-    $('#summernote').summernote()
-
-
-  })
-
-  		$(function () {
-			  $("#example1").DataTable({
-				"responsive": true, "lengthChange": false, "autoWidth": false,
-				"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-			  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-			  $('#example2').DataTable({
-				"paging": true,
-				"lengthChange": false,
-				"ordering": true,
-				"info": true,
-				"autoWidth": false,
-				"responsive": true,
-			  });
-			});
 </script>
-    </body>
+</body>
 </html>
