@@ -116,11 +116,9 @@
             <div class="sponsors-outer">
             <!--Sponsors Carousel-->
             <ul class="sponsors-carousel">
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{url('frontend/images/clients/1.jpg')}}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{url('frontend/images/clients/2.jpg')}}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{url('frontend/images/clients/3.jpg')}}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{url('frontend/images/clients/4.jpg')}}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{url('frontend/images/clients/5.jpg')}}" alt=""></a></figure></li>
+                @foreach($sponsor as $val)
+                <li class="slide-item"><figure class="image-box"><a href=""><img src="{{url('img/'.$val->sponsor_logo)}}" alt=""></a></figure></li>
+                @endforeach
             </ul>
         </div>
         </div>

@@ -10,14 +10,17 @@ use App\Http\Controllers\Admins\UsefulllinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\MessageController;
 use App\Http\Controllers\Admins\NewsletterController;
+use App\Http\Controllers\Admins\ResumeController;
 use App\Http\Controllers\Admins\MissionController;
 use App\Http\Controllers\Admins\VissionController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\FrequentlyaskedController;
+use App\Http\Controllers\Admins\SponsorController;
 use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Admins\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
+use App\Http\Controllers\Frontend\OurteamController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\ProductcategoryController;
@@ -73,6 +76,10 @@ Route::get('/career',[CareerController::class,'index' ]);
 Route::get('/news',[NewsController::class,'index' ]);
 
 
+////////////////////Our-Team/////////////////////////
+Route::get('/our-team',[OurteamController::class,'index' ]);
+
+
 ///////////////////////Product/////////////////////////////////
 Route::resource('product', App\Http\Controllers\Admins\ProductController::class);
 Route::delete('delete-product', [ProductController::class, 'destroy']);
@@ -106,6 +113,13 @@ Route::resource('newsletter', App\Http\Controllers\Admins\NewsletterController::
 Route::get('show-newsletter/{id}',[NewsletterController::class,'show' ]);
 Route::delete('delete-newsletter',[NewsletterController::class,'destroy' ]);
 Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
+
+
+////////////////////Resume/////////////////////////
+Route::resource('resume', App\Http\Controllers\Admins\ResumeController::class);
+Route::get('show-resume/{id}',[ResumeController::class,'show' ]);
+Route::delete('delete-resume',[ResumeController::class,'destroy' ]);
+Route::post('resume_store',[ResumeController::class,'store' ])->name('resume_store');
 
 
 Route::get('admin', function(){
@@ -168,6 +182,10 @@ Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
 Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
 
 
+////////////////////Career/////////////////////////////////
+Route::resource('career-data', App\Http\Controllers\Admins\CareerdataController::class);
+
+
 ///////////////////////Blog/////////////////////////////////
 Route::resource('blog-list', App\Http\Controllers\Admins\BlogController::class);
 Route::delete('delete-blog-list', [BlogController::class, 'destroy']);
@@ -217,6 +235,15 @@ Route::resource('frequently-asked-question', App\Http\Controllers\Admins\Frequen
 Route::get('edit-frequently-asked-question/{id}', [FrequentlyaskedController::class, 'edit']);
 Route::put('frequently-asked-question-update', [FrequentlyaskedController::class, 'update']);
 Route::delete('delete-frequently-asked-question', [FrequentlyaskedController::class, 'destroy']);
+
+
+
+//////////////////////Sponsor/////////////////////////////////
+Route::resource('sponsor', App\Http\Controllers\Admins\SponsorController::class);
+Route::get('edit-sponsor/{id}', [SponsorController::class, 'edit']);
+Route::put('sponsor-update', [SponsorController::class, 'update']);
+Route::delete('delete-sponsor', [SponsorController::class, 'destroy']);
+
 
 
 ////////////////////User/////////////////////////

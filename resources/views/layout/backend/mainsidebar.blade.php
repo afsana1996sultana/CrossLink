@@ -51,10 +51,19 @@
                   <p>Message</p>
                 </a>
               </li>
+
+
               <li class="nav-item">
                 <a href="{{url('/newsletter')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                   <p>Newsletter</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url('/resume')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                  <p>Resume</p>
                 </a>
               </li>
             </ul>
@@ -188,6 +197,13 @@
               </li>
 
               <li class="nav-item">
+                <a href="{{url('career-data/1/edit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Career</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-book-open"></i>
                   <p>Mission & Vission
@@ -222,6 +238,14 @@
                 <a href="{{url('/frequently-asked-question')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Frequently Asked Questions</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{url('/sponsor')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sponsor</p>
                 </a>
               </li>
             </ul>

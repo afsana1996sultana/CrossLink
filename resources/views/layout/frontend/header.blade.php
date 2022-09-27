@@ -37,15 +37,6 @@
                 <div class="pull-right upper-right clearfix">
                     <!--Info Box-->
                     <div class="upper-column info-box">
-                        <div class="icon-box"><span class="flaticon-location-pin"></span></div>
-                        <ul>
-                            <li><strong>{{ $val->time }}</strong></li>
-                            <li>Friday : Closed</li>
-                        </ul>
-                    </div>
-                    
-                    <!--Info Box-->
-                    <div class="upper-column info-box">
                         <div class="icon-box"><span class="flaticon-technology"></span></div>
                         <ul>
                             <li><strong>{{ $val->phone }}</strong></li>
