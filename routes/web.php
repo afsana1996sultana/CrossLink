@@ -16,11 +16,17 @@ use App\Http\Controllers\Admins\VissionController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\FrequentlyaskedController;
 use App\Http\Controllers\Admins\SponsorController;
+use App\Http\Controllers\Admins\AutomationController;
+use App\Http\Controllers\Admins\OfferController;
+use App\Http\Controllers\Admins\TeamController;
+use App\Http\Controllers\Admins\ProjectController;
 use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Admins\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurteamController;
+use App\Http\Controllers\Frontend\AutomationprojectController;
+use App\Http\Controllers\Frontend\ProjectdoneController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\NewsController;
 use App\Http\Controllers\Frontend\ProductcategoryController;
@@ -78,6 +84,15 @@ Route::get('/news',[NewsController::class,'index' ]);
 
 ////////////////////Our-Team/////////////////////////
 Route::get('/our-team',[OurteamController::class,'index' ]);
+
+
+////////////////////Automation-Project/////////////////////////
+Route::get('/automation-projects-work',[AutomationprojectController::class,'index' ]);
+
+
+
+////////////////////Project-Done/////////////////////////
+Route::get('/projects-done',[ProjectdoneController::class,'index' ]);
 
 
 ///////////////////////Product/////////////////////////////////
@@ -237,12 +252,40 @@ Route::put('frequently-asked-question-update', [FrequentlyaskedController::class
 Route::delete('delete-frequently-asked-question', [FrequentlyaskedController::class, 'destroy']);
 
 
+//////////////////////Automation-Work/////////////////////////////////
+Route::resource('automation-work', App\Http\Controllers\Admins\AutomationController::class);
+Route::get('edit-automation-work/{id}', [AutomationController::class, 'edit']);
+Route::put('automation-work-update', [AutomationController::class, 'update']);
+Route::delete('delete-automation-work', [AutomationController::class, 'destroy']);
+
+
+//////////////////////Offer/////////////////////////////////
+Route::resource('offer', App\Http\Controllers\Admins\OfferController::class);
+Route::get('edit-offer/{id}', [OfferController::class, 'edit']);
+Route::put('offer-update', [OfferController::class, 'update']);
+Route::delete('delete-offer', [OfferController::class, 'destroy']);
+
+
 
 //////////////////////Sponsor/////////////////////////////////
 Route::resource('sponsor', App\Http\Controllers\Admins\SponsorController::class);
 Route::get('edit-sponsor/{id}', [SponsorController::class, 'edit']);
 Route::put('sponsor-update', [SponsorController::class, 'update']);
 Route::delete('delete-sponsor', [SponsorController::class, 'destroy']);
+
+
+//////////////////////Team/////////////////////////////////
+Route::resource('team', App\Http\Controllers\Admins\TeamController::class);
+Route::get('edit-team/{id}', [TeamController::class, 'edit']);
+Route::put('team-update', [TeamController::class, 'update']);
+Route::delete('delete-team', [TeamController::class, 'destroy']);
+
+
+//////////////////////Projects/////////////////////////////////
+Route::resource('project-list', App\Http\Controllers\Admins\ProjectController::class);
+Route::get('edit-project-list/{id}', [ProjectController::class, 'edit']);
+Route::put('project-list-update', [ProjectController::class, 'update']);
+Route::delete('delete-project-list', [ProjectController::class, 'destroy']);
 
 
 

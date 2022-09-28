@@ -9,12 +9,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0">Testimonial</h1>
+					<h1 class="m-0">Projects</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="{{url('/admin')}}">Home</a></li>
-						<li class="breadcrumb-item active">Testimonial</li>
+						<li class="breadcrumb-item active">Projects</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -23,7 +23,7 @@
 	<!-- /.content-header -->
 
     <div class="section-body">
-		<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add_testimonial"><i class="fa fa-plus"></i>Add Testimonial</a> 
+		<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add_project"><i class="fa fa-plus"></i>Add New</a> 
         <div class="row mt-4">
             <div class="col-sm-12">
                 <div class="card">
@@ -35,24 +35,24 @@
                                         <th class="sorting sorting_asc">SN</th>
                                         <th class="sorting">Image</th>
                                         <th class="sorting">Name</th>
-                                        <th class="sorting">Designation</th>
+                                        <th class="sorting">Slug</th>
                                         <th class="sorting">Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody> 
-                                    @forelse ($testimonial as $testimonial)
+                                    @forelse ($project as $project)
                                     <tr class="odd">
-                                        <td>{{$testimonial-> id}}</td>
+                                        <td>{{$project-> id}}</td>
                                         <td>
-                                        <img src="{{asset('img/'.$testimonial->img)}}" height="70px" width="70px" alt="">
+                                        <img src="{{asset('img/'.$project->img)}}" height="70px" width="70px" alt="">
                                         </td>
-                                        <td>{{$testimonial-> name}}</td>
-                                        <td>{{$testimonial-> designation}}</td>
+                                        <td>{{$project-> name}}</td>
+                                        <td>{{$project-> slug}}</td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
-                                                <button type="button" value="{{$testimonial->id}}" class="btn btn-primary" id="edittestimonial" ><i class="fas fa-pencil-alt" ></i></button>&nbsp;
-                                                <button type="button" value="{{$testimonial->id}}" class="btn btn-danger" id="testimonialDbtn" ><i class="fas fa-trash"></i> </button>
+                                                <button type="button" value="{{$project->id}}" class="btn btn-primary" id="editproject" ><i class="fas fa-pencil-alt" ></i></button>&nbsp;
+                                                <button type="button" value="{{$project->id}}" class="btn btn-danger" id="projectDbtn" ><i class="fas fa-trash"></i> </button>
                                             </div>
                                         </td>   
                                     </tr>
@@ -69,30 +69,33 @@
     </div>
 </div>
 
-<!-- Add Testimonial Modal -->
-<div id="add_testimonial" class="modal custom-modal fade" role="dialog">
+<!-- Add Projects Modal -->
+<div id="add_project" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-edit">Add Testimonial</i></h5>
+                <h5 class="modal-title"><i class="fa fa-edit">Add Projects</i></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             {{-- add member--}}
             <div class="modal-body">
-                <form action="{{route('testimonial.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('project-list.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-sm-6">
-							<div class="input-group mb-5">
-								<label class="col-form-label">Image:&nbsp;</label>
-                                <div class="input-group mb-3">
-                                    <img src="{{url('backend/image/av.jpg')}}" alt="">
-                                </div>
-								<input type="file" class="form-control" id="filePhoto" name="filePhoto"required>
-							</div>
-						</div>
+                        <div class="form-group col-12">
+                            <label>Project Image Preview</label>
+                            <div>
+                                <img id="preview-img" class="admin-img" src="{{url('backend/assets/photo/preview.png')}}" alt="" height="120px" width="160px">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label>Project Image <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control-file" id="filePhoto" name="filePhoto" onchange="previewThumnailImage(event)">
+                        </div>
+
 
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
@@ -103,8 +106,8 @@
 
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
-                                <label class="col-form-label">Designation:&nbsp;</label>
-                                <input type="text" class="form-control" id="txtDesignation" name="txtDesignation"required>
+                                <label class="col-form-label">Slug:&nbsp;</label>
+                                <input type="text" class="form-control" id="txtSlug" name="txtSlug"required>
                             </div>
                         </div>
 
@@ -123,48 +126,49 @@
         </div>
     </div>
 </div>
-<!-- /Add Testimonial Modal -->
+<!-- /Add Projects Modal -->
 
-<!-- Edit Testimonial Modal -->
+<!-- Edit Projects Modal -->
 <div id="editModal" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Testimonial</h5>
+				<h5 class="modal-title">Edit Projects</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="{{url('testimonial-update')}}"  method="POST" enctype="multipart/form-data">
+				<form action="{{url('project-list-update')}}"  method="POST" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
 				
 					<div class="row">
                         <div class="col-sm-12">
-							<div class="input-group mb-4">
-                            <input type="hidden" value="" id="cmbTestimonialId" name="cmbTestimonialId" >
-								<label class="form-label">Image:&nbsp;</label>
-								<div class="input-group mb-3" id="eFilephoto"></div>
-                                <input type="file" class="form-control" name="filePhoto"  placeholder="image"><br>	
-							</div>
+                            <input type="hidden" value="" id="cmbProjectId" name="cmbProjectId" >
+							<label class="form-label">Project Image Preview:&nbsp;</label>
+							<div class="input-group mb-3" id="eFilephoto" alt="" height="120px" width="160px"></div>	
 						</div>
 
-                        <div class="col-sm-12">
-							<div class="input-group mb-4">
-								<label class="col-form-label">Name:&nbsp;</label>
-								<input type="text" class="form-control" id="eName" name="txtName">
-							</div>
-						</div>
+                        <div class="form-group col-12">
+                            <label>Project Image <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control-file" id="filePhoto" name="filePhoto" onchange="previewThumnailImage(event)">
+                        </div>
 
 
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
-                                <label class="col-form-label">Designation:&nbsp;</label>
-                                <input type="text" class="form-control" id="eDesignation" name="txtDesignation"required>
+                                <label class="col-form-label">Name:&nbsp;</label>
+                                <input type="text" class="form-control" id="eName" name="txtName">
+                            </div>
+                        </div>	
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-5">
+                                <label class="col-form-label">Slug:&nbsp;</label>
+                                <input type="text" class="form-control" id="eSlug" name="txtSlug">
                             </div>
                         </div>
-
 
                         <div class="form-group col-12">
                             <label>Description <span class="text-danger">*</span></label>
@@ -181,23 +185,23 @@
 		</div>
 	</div>
 </div>
-<!-- /Edit Testimonial Modal -->
-<!-- Delete Testimonial Modal -->
-<div class="modal custom-modal fade" id="delete_testimonial" role="dialog">
+<!-- /Edit Projects Modal -->
+<!-- Delete Projects Modal -->
+<div class="modal custom-modal fade" id="delete_project" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
 				<div class="form-header" style="text-align:center;">
-					<h3>Delete Testimonial</h3>
+					<h3>Delete Projects</h3>
 					<p>Are you sure want to delete?</p>
 				</div>
 				<div class="modal-btn delete-action">
 					<div class="row float-right">
 						<div class="col-6">
-							<form action="{{url('delete-testimonial')}}" method="post" >
+							<form action="{{url('delete-project-list')}}" method="post" >
 								@csrf
 								@method("DELETE")
-                                <input type="hidden" id="delete_testimonialId" name="d_testimonial">
+                                <input type="hidden" id="delete_projectId" name="d_project">
                                 <button type="submit" class="btn btn-danger continue-btn">Delete</button>		
 							</form>
 						</div>
@@ -210,18 +214,18 @@
 		</div>
 	</div>
 </div>
-<!-- /Delete Testimonial Modal -->
+<!-- /Delete Projects Modal -->
 <script>
 	$(document).ready(function(){
 
-        $(document).on('click','#testimonialDbtn',function(){
+        $(document).on('click','#projectDbtn',function(){
             // alart("ok");
-			var testimonial_id=$(this).val();
-			$('#delete_testimonial').modal('show');
-			$('#delete_testimonialId').val(testimonial_id);
+			var project_id=$(this).val();
+			$('#delete_project').modal('show');
+			$('#delete_projectId').val(project_id);
 		});
 
-		$(document).on('click','#edittestimonial',function(){
+		$(document).on('click','#editproject',function(){
 			//  alert("ok");
 
 			var eid=$(this).val();
@@ -229,24 +233,19 @@
 			$('#editModal').modal('show');
 			$.ajax({
 				type: "GET",
-				url: "/edit-testimonial/"+eid,
+				url: "/edit-project-list/"+eid,
 				success:function(response){
-					$('#cmbTestimonialId').val(eid);		
-                    $('#eName').val(response.testimonial.name);	
-                    $('#eDesignation').val(response.testimonial.designation);
-                    // $('#textarea').html(response.testimonial.description);
-                    $('#eDescription').summernote('code', response.testimonial.description);	
+					$('#cmbProjectId').val(eid);		
+                    $('#eName').val(response.project.name);	
+                    $('#eSlug').val(response.project.slug);
+                    $('#eDescription').summernote('code', response.project.description); 	
                     $("#eFilephoto").html(
-                        `<img src="img/${response.testimonial.img}" width="100" class="img-fluid img-thumbnail">`);
+                        `<img src="img/${response.project.img}" width="100" class="img-fluid img-thumbnail">`);
 				}
 			});
 		});
     
 	});
-
-    $(document).ready(function () {
-        $('.summernote').summernote();
-    });
 
     $("#table-1").dataTable({
         "columnDefs": [
@@ -254,8 +253,14 @@
         ]
     });
 
+    function previewThumnailImage(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('preview-img');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+};
+
 </script>
-@section('js')
-<script src="{{url('backend/assets/summernote/summernote-bs4.js')}}"></script>
-@endsection
 @endsection

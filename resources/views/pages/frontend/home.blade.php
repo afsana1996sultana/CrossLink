@@ -34,7 +34,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="border-title">Brighton Industrial Solutions</div></div>
+                    data-endeasing="Power4.easeIn"><div class="border-title">CrossLink Industrial Solutions</div></div>
                     
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="left" data-hoffset="15"
@@ -60,7 +60,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">VIEW SOLUTIONS</a> &ensp;&ensp; <a href="#" class="theme-btn btn-style-two">CONTACT US</a></div>
+                    data-endeasing="Power4.easeIn"><a href="{{url('/contact-us')}}" class="theme-btn btn-style-two">CONTACT US</a></div>
                     
                     
                 </li>
@@ -82,7 +82,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="subtitle-text">Welcome to Brighton</div></div>
+                    data-endeasing="Power4.easeIn"><div class="subtitle-text">Welcome to CrossLink</div></div>
                     
                     <div class="tp-caption text-right sft sfb tp-resizeme"
                     data-x="right" data-hoffset="-15"
@@ -108,7 +108,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">contact us</a></div>
+                    data-endeasing="Power4.easeIn"><a href="{{url('/contact-us')}}" class="theme-btn btn-style-one">contact us</a></div>
                     
                 </li>
                     
@@ -129,7 +129,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="subtitle-text">We are Brighton Industry</div></div>
+                    data-endeasing="Power4.easeIn"><div class="subtitle-text">We are Automation Industry</div></div>
                     
                     <div class="tp-caption text-center sft sfb tp-resizeme"
                     data-x="center" data-hoffset="0"
@@ -142,7 +142,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h2>We are the Top Industrial Manufacturer providing<br> the highest quality products</h2></div>
+                    data-endeasing="Power4.easeIn"><h2>We are the Top Industrial Automation Service providing<br> the highest quality products</h2></div>
                     
                     <div class="tp-caption sfr sfb tp-resizeme"
                     data-x="center" data-hoffset="0"
@@ -155,7 +155,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">contact us</a></div>  
+                    data-endeasing="Power4.easeIn"><a href="{{url('/contact-us')}}" class="theme-btn btn-style-one">contact us</a></div>  
                 </li>        
             </ul>
             <div class="tp-bannertimer"></div>
@@ -168,70 +168,31 @@
 <section class="service-style-one">
     <div class="auto-container">
         <div class="row clearfix">
-        
             <!--left-column-->
             <div class="column left-column col-md-4 col-sm-12">
                 <!--box-column-->
                 <div class="box-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <h2>What We Can Offer</h2>
                     <div class="text">The year is and launches the last of americas deep space probes and we will do it our way yes our way make all our dreams.</div>
-                    <a class="more" href="services-details.html">VIEW MORE <span class="fa fa-long-arrow-right"></span></a>
+                    <a class="more" href="{{url('/services')}}">VIEW MORE <span class="fa fa-long-arrow-right"></span></a>
                 </div>
             </div>
             
             <div class="col-md-8 col-sm-12">
-            
                 <div class="row clearfix">
-                
+                    @foreach ($offer as $val)
                     <!--service-block-->
                     <div class="service-block col-md-6 col-sm-6 col-sm-12">
                         <div class="inner-box">
                             <!--icon-box-->
                             <div class="icon-box">
-                                <span class="flaticon-atom"></span>
+                                <span class="{{ $val->icon }}"></span>
                             </div>
-                            <h3>Molecular Research</h3>
-                            <div class="text">The year is and launches the last of that americas deep space probes and we will do it our our way make all come true.</div>
-                            
+                            <h3>{{ $val->header }}</h3>
+                            <div class="text" style="text-align: justify;">{{ $val->detail }}</div>
                         </div>
                     </div>
-                    <!--service-block-->
-                    <div class="service-block col-md-6 col-sm-6 col-sm-12">
-                        <div class="inner-box">
-                            <!--icon-box-->
-                            <div class="icon-box">
-                                <span class="flaticon-users"></span>
-                            </div>
-                            <h3>Dedicated Team</h3>
-                            <div class="text">The year is and launches the last of that americas deep space probes and we will do it our our way make all come true.</div>
-                            
-                        </div>
-                    </div>
-                    <!--service-block-->
-                    <div class="service-block col-md-6 col-sm-6 col-sm-12">
-                        <div class="inner-box">
-                            <!--icon-box-->
-                            <div class="icon-box">
-                                <span class="flaticon-package-cube-box-for-delivery"></span>
-                            </div>
-                            <h3>Updated Standards</h3>
-                            <div class="text">The year is and launches the last of that americas deep space probes and we will do it our our way make all come true.</div>
-                            
-                        </div>
-                    </div>
-                    <!--service-block-->
-                    <div class="service-block col-md-6 col-sm-6 col-sm-12">
-                        <div class="inner-box">
-                            <!--icon-box-->
-                            <div class="icon-box">
-                                <span class="flaticon-anchor"></span>
-                            </div>
-                            <h3>Quality Assurance</h3>
-                            <div class="text">The year is and launches the last of that americas deep space probes and we will do it our our way make all come true.</div>
-                            
-                        </div>
-                    </div>
-                    
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -257,7 +218,6 @@
 <!--services-column-two-->
 <section class="services-column-two">
     <div class="auto-container">
-        
         <!--Section Title-->
         <div class="sec-title-one">
             <h2>Our Featured Services</h2>
@@ -355,10 +315,7 @@
                     </div>
                 </div>
             </div>
-            
         </div>
-        
-        
     </div>
 </section>
 

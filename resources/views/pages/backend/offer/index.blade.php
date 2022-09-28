@@ -9,12 +9,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0">Testimonial</h1>
+					<h1 class="m-0">Offers</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="{{url('/admin')}}">Home</a></li>
-						<li class="breadcrumb-item active">Testimonial</li>
+						<li class="breadcrumb-item active">Offers</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -23,7 +23,7 @@
 	<!-- /.content-header -->
 
     <div class="section-body">
-		<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add_testimonial"><i class="fa fa-plus"></i>Add Testimonial</a> 
+		<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add_offer"><i class="fa fa-plus"></i>Add New</a> 
         <div class="row mt-4">
             <div class="col-sm-12">
                 <div class="card">
@@ -33,26 +33,24 @@
                                 <thead>
                                     <tr>
                                         <th class="sorting sorting_asc">SN</th>
-                                        <th class="sorting">Image</th>
                                         <th class="sorting">Name</th>
-                                        <th class="sorting">Designation</th>
+                                        <th class="sorting">Icon</th>
+                                        <th class="sorting">Details</th>
                                         <th class="sorting">Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody> 
-                                    @forelse ($testimonial as $testimonial)
+                                    @forelse ($offer as $offer)
                                     <tr class="odd">
-                                        <td>{{$testimonial-> id}}</td>
-                                        <td>
-                                        <img src="{{asset('img/'.$testimonial->img)}}" height="70px" width="70px" alt="">
-                                        </td>
-                                        <td>{{$testimonial-> name}}</td>
-                                        <td>{{$testimonial-> designation}}</td>
+                                        <td>{{$offer-> id}}</td>
+                                        <td>{{$offer-> header}}</td>
+                                        <td>{{$offer-> icon}}</td>
+                                        <td>{{$offer-> detail}}</td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
-                                                <button type="button" value="{{$testimonial->id}}" class="btn btn-primary" id="edittestimonial" ><i class="fas fa-pencil-alt" ></i></button>&nbsp;
-                                                <button type="button" value="{{$testimonial->id}}" class="btn btn-danger" id="testimonialDbtn" ><i class="fas fa-trash"></i> </button>
+                                                <button type="button" value="{{$offer->id}}" class="btn btn-primary" id="editoffer" ><i class="fas fa-pencil-alt" ></i></button>&nbsp;
+                                                <button type="button" value="{{$offer->id}}" class="btn btn-danger" id="offerDbtn" ><i class="fas fa-trash"></i> </button>
                                             </div>
                                         </td>   
                                     </tr>
@@ -69,48 +67,38 @@
     </div>
 </div>
 
-<!-- Add Testimonial Modal -->
-<div id="add_testimonial" class="modal custom-modal fade" role="dialog">
+<!-- Add Offers Modal -->
+<div id="add_offer" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-edit">Add Testimonial</i></h5>
+                <h5 class="modal-title"><i class="fa fa-edit">Add Offers</i></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             {{-- add member--}}
             <div class="modal-body">
-                <form action="{{route('testimonial.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('offer.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-sm-6">
-							<div class="input-group mb-5">
-								<label class="col-form-label">Image:&nbsp;</label>
-                                <div class="input-group mb-3">
-                                    <img src="{{url('backend/image/av.jpg')}}" alt="">
-                                </div>
-								<input type="file" class="form-control" id="filePhoto" name="filePhoto"required>
-							</div>
-						</div>
-
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
                                 <label class="col-form-label">Name:&nbsp;</label>
-                                <input type="text" class="form-control" id="txtName" name="txtName"required>
+                                <input type="text" class="form-control" id="txtHeader" name="txtHeader"required>
                             </div>
                         </div>	
 
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
-                                <label class="col-form-label">Designation:&nbsp;</label>
-                                <input type="text" class="form-control" id="txtDesignation" name="txtDesignation"required>
+                                <label class="col-form-label">Icon:&nbsp;</label>
+                                <input type="text" class="form-control" id="txtIcon" name="txtIcon"required>
                             </div>
                         </div>
 
                         <div class="form-group col-12">
-                            <label>Description <span class="text-danger">*</span></label>
-                            <textarea name="txtDescription" id="txtDescription" class="summernote"></textarea>
+                            <label>Details</label>
+                            <textarea name="txtDetail" id="txtDetail" cols="30" rows="10" class="form-control text-area-5"></textarea>
                         </div>
                     </div>
 
@@ -123,52 +111,44 @@
         </div>
     </div>
 </div>
-<!-- /Add Testimonial Modal -->
+<!-- /Add Offers Modal -->
 
-<!-- Edit Testimonial Modal -->
+<!-- Edit Offers Modal -->
 <div id="editModal" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Testimonial</h5>
+				<h5 class="modal-title">Edit Offers</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="{{url('testimonial-update')}}"  method="POST" enctype="multipart/form-data">
+				<form action="{{url('offer-update')}}"  method="POST" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
 				
 					<div class="row">
                         <div class="col-sm-12">
-							<div class="input-group mb-4">
-                            <input type="hidden" value="" id="cmbTestimonialId" name="cmbTestimonialId" >
-								<label class="form-label">Image:&nbsp;</label>
-								<div class="input-group mb-3" id="eFilephoto"></div>
-                                <input type="file" class="form-control" name="filePhoto"  placeholder="image"><br>	
-							</div>
-						</div>
-
-                        <div class="col-sm-12">
-							<div class="input-group mb-4">
-								<label class="col-form-label">Name:&nbsp;</label>
-								<input type="text" class="form-control" id="eName" name="txtName">
-							</div>
-						</div>
+                            <div class="input-group mb-5">
+                                <input type="hidden" value="" id="cmbOfferId" name="cmbOfferId" >
+                                <label class="col-form-label">Name:&nbsp;</label>
+                                <input type="text" class="form-control" id="eHeader" name="txtHeader">
+                            </div>
+                        </div>
 
 
                         <div class="col-sm-12">
                             <div class="input-group mb-5">
-                                <label class="col-form-label">Designation:&nbsp;</label>
-                                <input type="text" class="form-control" id="eDesignation" name="txtDesignation"required>
+                                <label class="col-form-label">Icon:&nbsp;</label>
+                                <input type="text" class="form-control" id="eIcon" name="txtIcon"required>
                             </div>
                         </div>
 
 
                         <div class="form-group col-12">
-                            <label>Description <span class="text-danger">*</span></label>
-                            <textarea class="summernote" id="eDescription" name="txtDescription"></textarea>
+                            <label>Details</label>
+                            <textarea name="txtDetail" id="eDetail" cols="30" rows="10" class="form-control text-area-5"></textarea>
                         </div>
 					</div>
 
@@ -181,23 +161,23 @@
 		</div>
 	</div>
 </div>
-<!-- /Edit Testimonial Modal -->
-<!-- Delete Testimonial Modal -->
-<div class="modal custom-modal fade" id="delete_testimonial" role="dialog">
+<!-- /Edit Offers Modal -->
+<!-- Delete Offers Modal -->
+<div class="modal custom-modal fade" id="delete_offer" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
 				<div class="form-header" style="text-align:center;">
-					<h3>Delete Testimonial</h3>
+					<h3>Delete Offers</h3>
 					<p>Are you sure want to delete?</p>
 				</div>
 				<div class="modal-btn delete-action">
 					<div class="row float-right">
 						<div class="col-6">
-							<form action="{{url('delete-testimonial')}}" method="post" >
+							<form action="{{url('delete-offer')}}" method="post" >
 								@csrf
 								@method("DELETE")
-                                <input type="hidden" id="delete_testimonialId" name="d_testimonial">
+                                <input type="hidden" id="delete_offerId" name="d_offer">
                                 <button type="submit" class="btn btn-danger continue-btn">Delete</button>		
 							</form>
 						</div>
@@ -210,18 +190,18 @@
 		</div>
 	</div>
 </div>
-<!-- /Delete Testimonial Modal -->
+<!-- /Delete Offers Modal -->
 <script>
 	$(document).ready(function(){
 
-        $(document).on('click','#testimonialDbtn',function(){
+        $(document).on('click','#offerDbtn',function(){
             // alart("ok");
-			var testimonial_id=$(this).val();
-			$('#delete_testimonial').modal('show');
-			$('#delete_testimonialId').val(testimonial_id);
+			var offer_id=$(this).val();
+			$('#delete_offer').modal('show');
+			$('#delete_offerId').val(offer_id);
 		});
 
-		$(document).on('click','#edittestimonial',function(){
+		$(document).on('click','#editoffer',function(){
 			//  alert("ok");
 
 			var eid=$(this).val();
@@ -229,24 +209,17 @@
 			$('#editModal').modal('show');
 			$.ajax({
 				type: "GET",
-				url: "/edit-testimonial/"+eid,
+				url: "/edit-offer/"+eid,
 				success:function(response){
-					$('#cmbTestimonialId').val(eid);		
-                    $('#eName').val(response.testimonial.name);	
-                    $('#eDesignation').val(response.testimonial.designation);
-                    // $('#textarea').html(response.testimonial.description);
-                    $('#eDescription').summernote('code', response.testimonial.description);	
-                    $("#eFilephoto").html(
-                        `<img src="img/${response.testimonial.img}" width="100" class="img-fluid img-thumbnail">`);
+					$('#cmbOfferId').val(eid);		
+                    $('#eHeader').val(response.offer.header);	
+                    $('#eIcon').val(response.offer.icon);	
+                    $('#eDetail').val(response.offer.detail);	
 				}
 			});
 		});
     
 	});
-
-    $(document).ready(function () {
-        $('.summernote').summernote();
-    });
 
     $("#table-1").dataTable({
         "columnDefs": [
@@ -255,7 +228,4 @@
     });
 
 </script>
-@section('js')
-<script src="{{url('backend/assets/summernote/summernote-bs4.js')}}"></script>
-@endsection
 @endsection

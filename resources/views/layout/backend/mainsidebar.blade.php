@@ -142,6 +142,22 @@
             </ul>
           </li>
 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>All Projects
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/project-list')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Projects</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -243,9 +259,33 @@
 
 
               <li class="nav-item">
+                <a href="{{url('/offer')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Offers</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
                 <a href="{{url('/sponsor')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sponsor</p>
+                </a>
+              </li>
+
+              
+              <li class="nav-item">
+                <a href="{{url('/team')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Team Member</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{url('/automation-work')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Automation Work</p>
                 </a>
               </li>
             </ul>
@@ -283,202 +323,6 @@
 
             </ul>
           </li>
-
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Business Units
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/businesscategories')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories of Business</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/business')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Business</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/additionalimage')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Additional Image</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Services
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/servicecategories')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories of services</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/service')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Services</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Projects
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/projectcategories')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories of  Projects</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/allproject')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All Projects</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Partners
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/partnercategories')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories of Partners</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/partner')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Partners</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Training Schedule
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/bsctraining')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bsc Training</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/diplomatraining')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Diploma Training</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="{{url('/ourclient')}}" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>Our Clients</p>   
-            </a>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Others
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/frequentsection')}}" class="nav-link">
-                  <i class="fa fa-edit nav-icon"></i>
-                  <p>Frequently Ask Question</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{url('/skill')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Skills</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/count')}}" class="nav-link">
-                  <i class="fa fa-edit nav-icon"></i>
-                  <p>Counts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/choosesection')}}" class="nav-link">
-                  <i class="fa fa-edit nav-icon"></i>
-                  <p>Choose Section</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Product
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/productcategories')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories of Products</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/product')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Products</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

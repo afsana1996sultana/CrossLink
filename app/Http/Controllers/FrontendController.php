@@ -7,6 +7,7 @@ use App\Models\Mission;
 use App\Models\Vission;
 use App\Models\Testimonial;
 use App\Models\Frequentlyasked;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -24,6 +25,8 @@ class FrontendController extends Controller
         $data['testimonial'] = Testimonial::select('id', 'name', 'designation', 'description', 'img')->get();
 
         $data['frequentlyasked'] = Frequentlyasked::select('id', 'question', 'answer', 'img')->get();
+
+        $data['offer'] = Offer::select('id', 'header', 'icon', 'detail')->get();
 
         return view('pages.frontend.home', $data);
         
