@@ -221,100 +221,27 @@
         <!--Section Title-->
         <div class="sec-title-one">
             <h2>Our Featured Services</h2>
-            <div class="text">The year is and launches the last of americas deep space probes and we dreams.</div>
+            <div class="text">Our Featured Services is the use of control systems, computers or robots, and 
+                information technologies for handling different processes and machineries.</div>
         </div>
         <div class="row clearfix">
-            
+            @foreach ($service as $val)
             <!--Service block two-->
             <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
                 <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-1.jpg')}}" alt=""></a></figure>
+                        <figure class="image"><a href="{{URL::to('service_details/'.$val->slug)}}"><img src="{{url('img/'.$val->img)}}" alt=""></a></figure>
                     </div>
                     <div class="lower-content">
                         <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="flaticon-transport"></span> Agricultural processing</a>
+                            <a href="{{URL::to('service_details/'.$val->slug)}}" class="theme-btn service-title"><span class="{{ $val->icon }}"></span> {{ $val->name }}</a>
                         </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
+                        <div class="text" style="text-align: justify;">{!! \Illuminate\Support\Str::words(strip_tags($val->description), 15,'....')  !!}</div>
+                        <div class="link-box"><a href="{{URL::to('service_details/'.$val->slug)}}" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-2.jpg')}}" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="flaticon-database"></span> Chemical Research</a>
-                        </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-3.jpg')}}" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="fa  fa-support"></span> Metal Engineering</a>
-                        </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-4.jpg')}}" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="flaticon-people"></span> Mechanical Process</a>
-                        </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-5.jpg')}}" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="flaticon-pumpjack-1"></span> Petroleum & Gas</a>
-                        </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="service-block-two col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image-box">
-                        <figure class="image"><a href="services-details.html"><img src="{{url('frontend/images/resource/service-image-6.jpg')}}" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <div class="outer-link">
-                            <a href="services-details.html" class="theme-btn service-title"><span class="flaticon-technology-2"></span> Power & Energy</a>
-                        </div>
-                        <div class="text">The way we all became the Brady Bunch and you know where you were then be to end.</div>
-                        <div class="link-box"><a href="services-details.html" class="theme-btn normal-link">VIEW MORE <span class="fa fa-long-arrow-right"></span></a></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -569,7 +496,6 @@
             <form class="wpcf7" id="ajaxnewsletter">
                 @csrf
                 <div class="row clearfix">
-                
                     <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12">
                         <div class="row clearfix">
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -590,8 +516,7 @@
                         <div class="form-group button-group">
                             <button id="snd_newsletter" class="btn-style-three theme-btn">SUBSCRIBE</button>
                         </div>
-                    </div>
-                    
+                    </div>   
                 </div>
             </form>
         </div>

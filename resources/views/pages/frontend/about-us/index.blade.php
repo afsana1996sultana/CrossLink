@@ -96,49 +96,22 @@
         <div class="sec-title-four">
             <h4 style="color: red;">WHAT WE DO</h4>
             <h2 style="font-weight: bold;">A Selection Of Industries We Serve</h2>
-            <div style="font-size: 22px;">Precise Automation & Control was formerly known as Precise Process Control, it was established in year 1999.</div>
+            <div style="font-size: 22px;">CrossLink Automation & Control was formerly known as Automation Process Control, it was established in year 2016.</div>
         </div>
         <div class="row clearfix">
-        
+            @foreach ($offer as $val)
             <div class="column col-md-3 col-sm-6 col-xs-12">
                 <div class="service-block-five wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <div class="icon-box"><span class="flaticon-atom"></span></div>
-                        <h3>Molecular Research</h3>
-                        <div class="text">The year is and launches the last of that americas deep space probes and we come true.</div>
+                        <div class="icon-box"><span class="{{ $val->icon }}"></span></div>
+                        <h3>{{ $val->header }}</h3>
+                        <div class="text" style="text-align: justify;">
+                            {!! \Illuminate\Support\Str::words(strip_tags($val->detail), 20,'....')  !!}
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="column col-md-3 col-sm-6 col-xs-12">
-                <div class="service-block-five wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="flaticon-users"></span></div>
-                        <h3>Dedicated Team</h3>
-                        <div class="text">The year is and launches the last of that americas deep space probes and we come true.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="column col-md-3 col-sm-6 col-xs-12">
-                <div class="service-block-five wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="flaticon-package-cube-box-for-delivery"></span></div>
-                        <h3>Updated Standards</h3>
-                        <div class="text">The year is and launches the last of that americas deep space probes and we come true.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="column col-md-3 col-sm-6 col-xs-12">
-                <div class="service-block-five wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="flaticon-anchor"></span></div>
-                        <h3>Quality Assurance</h3>
-                        <div class="text">The year is and launches the last of that americas deep space probes and we come true.</div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

@@ -16,15 +16,19 @@ use App\Http\Controllers\Admins\VissionController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Admins\FrequentlyaskedController;
 use App\Http\Controllers\Admins\SponsorController;
+use App\Http\Controllers\Admins\CustomerController;
+use App\Http\Controllers\Admins\CustomerworkController;
 use App\Http\Controllers\Admins\AutomationController;
 use App\Http\Controllers\Admins\OfferController;
 use App\Http\Controllers\Admins\TeamController;
 use App\Http\Controllers\Admins\ProjectController;
+use App\Http\Controllers\Admins\ServiceController;
 use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Admins\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurteamController;
+use App\Http\Controllers\Frontend\OurcustomerController;
 use App\Http\Controllers\Frontend\AutomationprojectController;
 use App\Http\Controllers\Frontend\ProjectdoneController;
 use App\Http\Controllers\Frontend\CareerController;
@@ -33,6 +37,7 @@ use App\Http\Controllers\Frontend\ProductcategoryController;
 use App\Http\Controllers\Frontend\ProductsubcategoryController;
 use App\Http\Controllers\Frontend\ProductdetailController;
 use App\Http\Controllers\Frontend\BlogdetailController;
+use App\Http\Controllers\Frontend\ServicedetailController;
 use App\Http\Controllers\Admins\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,6 +91,10 @@ Route::get('/news',[NewsController::class,'index' ]);
 Route::get('/our-team',[OurteamController::class,'index' ]);
 
 
+////////////////////Our-Customers/////////////////////////
+Route::get('/our-customers',[OurcustomerController::class,'index' ]);
+
+
 ////////////////////Automation-Project/////////////////////////
 Route::get('/automation-projects-work',[AutomationprojectController::class,'index' ]);
 
@@ -93,6 +102,7 @@ Route::get('/automation-projects-work',[AutomationprojectController::class,'inde
 
 ////////////////////Project-Done/////////////////////////
 Route::get('/projects-done',[ProjectdoneController::class,'index' ]);
+Route::get('/projects',[ProjectdoneController::class,'index' ]);
 
 
 ///////////////////////Product/////////////////////////////////
@@ -114,6 +124,10 @@ Route::get('product_details/{slug}', [ProductdetailController::class, 'product_d
 
 ////////////////////Blog-Details/////////////////////////
 Route::get('blog_details/{slug}', [BlogdetailController::class, 'blog_details']);
+
+
+////////////////////Service-Details/////////////////////////
+Route::get('service_details/{slug}', [ServicedetailController::class, 'service_details']);
 
 
 ////////////////////Message/////////////////////////
@@ -274,6 +288,21 @@ Route::put('sponsor-update', [SponsorController::class, 'update']);
 Route::delete('delete-sponsor', [SponsorController::class, 'destroy']);
 
 
+
+//////////////////////Customer/////////////////////////////////
+Route::resource('customer-list', App\Http\Controllers\Admins\CustomerController::class);
+Route::get('edit-customer-list/{id}', [CustomerController::class, 'edit']);
+Route::put('customer-list-update', [CustomerController::class, 'update']);
+Route::delete('delete-customer-list', [CustomerController::class, 'destroy']);
+
+
+//////////////////////Customer-Work/////////////////////////////////
+Route::resource('customer-work', App\Http\Controllers\Admins\CustomerworkController::class);
+Route::get('edit-customer-work/{id}', [CustomerworkController::class, 'edit']);
+Route::put('customer-work-update', [CustomerworkController::class, 'update']);
+Route::delete('delete-customer-work', [CustomerworkController::class, 'destroy']);
+
+
 //////////////////////Team/////////////////////////////////
 Route::resource('team', App\Http\Controllers\Admins\TeamController::class);
 Route::get('edit-team/{id}', [TeamController::class, 'edit']);
@@ -286,6 +315,14 @@ Route::resource('project-list', App\Http\Controllers\Admins\ProjectController::c
 Route::get('edit-project-list/{id}', [ProjectController::class, 'edit']);
 Route::put('project-list-update', [ProjectController::class, 'update']);
 Route::delete('delete-project-list', [ProjectController::class, 'destroy']);
+
+
+
+//////////////////////Service/////////////////////////////////
+Route::resource('all-service', App\Http\Controllers\Admins\ServiceController::class);
+Route::get('edit-all-service/{id}', [ServiceController::class, 'edit']);
+Route::put('all-service-update', [ServiceController::class, 'update']);
+Route::delete('delete-all-service', [ServiceController::class, 'destroy']);
 
 
 

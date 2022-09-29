@@ -2,57 +2,57 @@
 
 namespace App\Http\Controllers\Admins;
 
-use App\Models\Sponsor;
+use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SponsorController extends Controller
+class CustomerController extends Controller
 {
     public function index()
     {
-        $sponsor=Sponsor::all();
-        return view("pages.backend.sponsor.index",["sponsor"=>$sponsor]);
+        $customer=Customer::all();
+        return view("pages.backend.customer.index",["customer"=>$customer]);
         
     }
 
 
     public function store(Request $request){
-        $sponsor=new Sponsor; 
+        $customer=new Customer; 
 
         if(isset($request->filePhoto)){
 			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
-			$sponsor->sponsor_logo=$imgName;
-			$sponsor->update();
+			$customer->customer_logo=$imgName;
+			$customer->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}
-        $sponsor->deleted_at=$request->txtDeleted_at;
-        $sponsor->save();
+        $customer->deleted_at=$request->txtDeleted_at;
+        $customer->save();
                
         return back()->with('success','Created Successfully.');     
     }
 
 
     public function edit($id){
-		$sponsor=Sponsor::find($id);
+		$customer=Customer::find($id);
 		return response()->json([
 			'status'=>200,
-			'sponsor'=>$sponsor
+			'customer'=>$customer
 		]);
 	}
 
 
-    public function update(Request $request,Sponsor $sponsor){
-        $sponsorid=$request->input('cmbSponsorId');
-        $sponsor = Sponsor::find($sponsorid);
-        $sponsor->id=$request->cmbSponsorId; 
+    public function update(Request $request,Customer $customer){
+        $customerid=$request->input('cmbCustomerId');
+        $customer = Customer::find($customerid);
+        $customer->id=$request->cmbCustomerId; 
 
         if(isset($request->filePhoto)){
 			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
-			$sponsor->sponsor_logo=$imgName;
+			$customer->customer_logo=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}
-        $sponsor->deleted_at=$request->txtDeleted_at;		   
-        $sponsor->update();
+        $customer->deleted_at=$request->txtDeleted_at;		   
+        $customer->update();
         return redirect()->back()
         ->with('success',' Updated successfully'); 
                     
@@ -60,9 +60,9 @@ class SponsorController extends Controller
 
 
     public function destroy(Request $request){  
-        $sponsorid=$request->input('d_sponsor');
-		$sponsor= Sponsor::find($sponsorid);
-		$sponsor->delete();
+        $customerid=$request->input('d_customer');
+		$customer= Customer::find($customerid);
+		$customer->delete();
 
         return redirect()->back()
         ->with('success',' Deleted successfully');

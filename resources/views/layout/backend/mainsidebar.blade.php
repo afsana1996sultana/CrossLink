@@ -161,6 +161,23 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Services
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/all-service')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Service</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fa fa-book-open"></i>
               <p>Blogs
                 <i class="right fas fa-angle-left"></i>
@@ -178,6 +195,30 @@
                 <a href="{{url('/comment')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Comments</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Customers
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/customer-list')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Customers</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url('/customer-work')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Customers Work</p>
                 </a>
               </li>
             </ul>

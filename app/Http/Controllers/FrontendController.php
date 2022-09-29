@@ -8,6 +8,7 @@ use App\Models\Vission;
 use App\Models\Testimonial;
 use App\Models\Frequentlyasked;
 use App\Models\Offer;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -27,6 +28,8 @@ class FrontendController extends Controller
         $data['frequentlyasked'] = Frequentlyasked::select('id', 'question', 'answer', 'img')->get();
 
         $data['offer'] = Offer::select('id', 'header', 'icon', 'detail')->get();
+
+        $data['service'] = Service::select('id', 'name', 'slug', 'icon', 'description', 'img')->get();
 
         return view('pages.frontend.home', $data);
         
