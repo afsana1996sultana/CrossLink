@@ -31,7 +31,7 @@
             <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
                 <section class="content-section services-content">
                     <figure class="bigger-image"><img src="{{url('frontend/images/resource/service-detail-1.jpg')}}" alt=""></figure>
-                    <div class="sec-title-one"><h2>Chemical Research</h2></div>
+                    <div class="sec-title-one"><h2>{{$ProductData->p_name}}</h2></div>
 
                     <div class="text-block">
                         <p>The way we all became the Brady come and listen to a story about a man barely kept his family never heard to the word able this time there is no stopping us the Love Boat soon will be making another run the Love Boat in a promises something for a everyone be from me and the card attached would say federal impossible this time there is no stopping us the Love Boat to soon will be making another run the Love Boat promises became the Brady come and listen to a story about a man barely kept his family never heard to the word able this time there is no stopping us the Love Boat soon will be making another run the Love Boat in a promises something for a everyone be from me and the card attached would say federal impossible this time there is no stopping us the Love Boat to soon will be making another run the Love Boat promises.</p>

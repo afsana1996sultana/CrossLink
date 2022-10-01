@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('category');
             $table->string('sub_category');
+            $table->string('child_category')->nullable();
             $table->longText('long_description');
             $table->longText('short_desctiption');
             $table->string('p_img');

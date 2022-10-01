@@ -26,6 +26,15 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        {{--@if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif--}}
                         <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -94,6 +103,17 @@
                                         <option selected><-----Choose Sub-Category----></option>
                                         @foreach ($submenu as $val)
                                         <option value="{{ $val->id }}">{{ $val->submenu_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group col-12">
+                                    <label>Child Category</label>
+                                    <select id="txtChildcategory" class="form-control" name="txtChildcategory">
+                                        <option selected><-----Choose Child-Category----></option>
+                                        @foreach ($childmenu as $val)
+                                        <option value="{{ $val->id }}">{{ $val->childmenu_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

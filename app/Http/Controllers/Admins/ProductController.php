@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Menu;
 use App\Models\Submenu;
+use App\Models\Childmenu;
 use App\Models\Status;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,15 +17,18 @@ class ProductController extends Controller
     {
         $menu=Menu::all();
         $submenu=Submenu::all();
+        $childmenu=Childmenu::all();
         $status=Status::all();
 
         $product =DB::table('products')
              ->join('menus','menus.id', '=', 'products.category')
              ->join('submenus','submenus.id', '=', 'products.sub_category')
+             ->join('childmenus','childmenus.id', '=', 'products.child_category')
              ->join('statuses','statuses.id', '=', 'products.status')
-             ->select('products.*','menus.menu_name','submenus.submenu_name','statuses.s_name')
+             ->select('products.*','menus.menu_name','submenus.submenu_name', 'childmenus.childmenu_name', 'statuses.s_name')
              ->get();
-        return view("pages.backend.product.index",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status,]);
+            dd($product);
+        return view("pages.backend.product.index",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status, "childmenu"=>$childmenu]);
         
     }
 
@@ -34,20 +38,28 @@ class ProductController extends Controller
         $product=Product::all();
         $menu=Menu::all();
         $submenu=Submenu::all();
+        $childmenu=Childmenu::all();
         $status=Status::all();
       
-        return view("pages.backend.product.create",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status]);
+        return view("pages.backend.product.create",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status, "childmenu"=>$childmenu]);
     }
 
 
 
     public function store(Request $request){
+
+        // $validated = $request->validate([
+        //     'txtChildcategory' => 'unique:products',
+        // ]);
+
+
         $product=new Product; 
         $product->p_name=$request->txtProductName;
         $product->title=$request->txtTitle;
         $product->slug=$request->txtSlug;
         $product->category=$request->txtCategory;
         $product->sub_category=$request->txtSubcategory;
+        $product->child_category=$request->txtChildcategory;
         $product->long_description=$request->txtLongDescription;
         $product->short_desctiption=$request->txtShortDescription;
         $product->icon=$request->txtIcon;
@@ -95,15 +107,20 @@ class ProductController extends Controller
         $product=Product::find($id);
         $menu=Menu::all();
         $submenu=Submenu::all();
+        $childmenu=Childmenu::all();
         $status=Status::all();
         
-        return view("pages.backend.product.edit",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status]);
+        return view("pages.backend.product.edit",["product"=>$product, "menu"=>$menu, "submenu"=>$submenu, "status"=>$status, "childmenu"=>$childmenu]);
 		
 	}
 
 
 
     public function update(Request $request,$id){
+        // $validated = $request->validate([
+        //     'child_category' => 'unique:products',
+        // ]);
+
         $product = Product::find($id);
 
         if(isset($request->txtProductName)){
@@ -125,6 +142,12 @@ class ProductController extends Controller
         if(isset($request->txtSubcategory)){
         $product->sub_category=$request->txtSubcategory;
         } 
+
+
+        if(isset($request->txtChildcategory)){
+        $product->child_category=$request->txtChildcategory;
+        } 
+
 
         if(isset($request->txtLongDescription)){
         $product->long_description=$request->txtLongDescription;
