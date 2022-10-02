@@ -115,7 +115,7 @@
                                 <div class="form-group col-12">
                                     <label>Category <span class="text-danger">*</span></label>
                                     <select id="txtCategory" class="form-control" name="txtCategory">
-                                        <option selected><-----Choose Category----></option>
+                                        <option selected value=""><-----Choose Category----></option>
                                         @foreach ($menu as $val)
                                         <option value="{{ $val->id }}" {{ ( $val->id == $product->category) ? 'selected' : '' }}>
                                             {{ $val->menu_name }}
@@ -127,7 +127,7 @@
                                 <div class="form-group col-12">
                                     <label>Sub Category <span class="text-danger">*</span></label>
                                     <select id="txtSubcategory" class="form-control" name="txtSubcategory">
-                                        <option selected><-----Choose Sub-Category----></option>
+                                        <option selected value=""><-----Choose Sub-Category----></option>
                                         @foreach ($submenu as $val)
                                         <option value="{{ $val->id }}" {{ ( $val->id == $product->sub_category) ? 'selected' : '' }}>
                                             {{ $val->submenu_name }}
@@ -139,8 +139,8 @@
 
                                 <div class="form-group col-12">
                                     <label>Child Category <span class="text-danger">*</span></label>
-                                    <select id="txtChildcategory" class="form-control" name="txtChildcategory">
-                                        <option selected><-----Choose Child-Category----></option>
+                                    <select id="txtChildcategory" class="form-control" name="child_category">
+                                        <option selected value=""><-----Choose Child-Category----></option>
                                         @foreach ($childmenu as $val)
                                         <option value="{{ $val->id }}" {{ ( $val->id == $product->child_category) ? 'selected' : '' }}>
                                             {{ $val->childmenu_name }}

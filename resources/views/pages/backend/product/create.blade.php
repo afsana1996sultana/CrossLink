@@ -90,7 +90,7 @@
                                 <div class="form-group col-12">
                                     <label>Category <span class="text-danger">*</span></label>
                                     <select id="txtCategory" class="form-control" name="txtCategory" required>
-                                        <option selected><-----Choose Category----></option>
+                                        <option selected value=""><-----Choose Category----></option>
                                         @foreach ($menu as $val)
                                         <option value="{{ $val->id }}">{{ $val->menu_name }}</option>
                                         @endforeach
@@ -100,7 +100,7 @@
                                 <div class="form-group col-12">
                                     <label>Sub Category</label>
                                     <select id="txtSubcategory" class="form-control" name="txtSubcategory" required>
-                                        <option selected><-----Choose Sub-Category----></option>
+                                        <option selected value=""><-----Choose Sub-Category----></option>
                                         @foreach ($submenu as $val)
                                         <option value="{{ $val->id }}">{{ $val->submenu_name }}</option>
                                         @endforeach
@@ -110,8 +110,8 @@
 
                                 <div class="form-group col-12">
                                     <label>Child Category</label>
-                                    <select id="txtChildcategory" class="form-control" name="txtChildcategory">
-                                        <option selected><-----Choose Child-Category----></option>
+                                    <select id="txtChildcategory" class="form-control" name="child_category">
+                                        <option selected value=""><-----Choose Child-Category----></option>
                                         @foreach ($childmenu as $val)
                                         <option value="{{ $val->id }}">{{ $val->childmenu_name }}</option>
                                         @endforeach

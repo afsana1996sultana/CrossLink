@@ -33,7 +33,7 @@
                     </div>
                     <div class="sec-title-one"><h2>{{$ProductData->p_name}}</h2></div>
 
-                    <div class="text-block">
+                    <div class="text-block" style="text-align: justify;">
                         <p>{!! $ProductData->long_description !!}</p>
                     </div>
 
