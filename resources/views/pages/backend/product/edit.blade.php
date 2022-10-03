@@ -126,7 +126,7 @@
 
                                 <div class="form-group col-12">
                                     <label>Sub Category <span class="text-danger">*</span></label>
-                                    <select id="txtSubcategory" class="form-control" name="txtSubcategory">
+                                    <select id="txtSubcategory" class="form-control" name="sub_category">
                                         <option selected value=""><-----Choose Sub-Category----></option>
                                         @foreach ($submenu as $val)
                                         <option value="{{ $val->id }}" {{ ( $val->id == $product->sub_category) ? 'selected' : '' }}>

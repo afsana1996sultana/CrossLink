@@ -20,7 +20,7 @@ class SponsorController extends Controller
         $sponsor=new Sponsor; 
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$sponsor->sponsor_logo=$imgName;
 			$sponsor->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -47,7 +47,7 @@ class SponsorController extends Controller
         $sponsor->id=$request->cmbSponsorId; 
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+			$imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$sponsor->sponsor_logo=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}

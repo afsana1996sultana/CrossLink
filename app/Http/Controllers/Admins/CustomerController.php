@@ -20,7 +20,7 @@ class CustomerController extends Controller
         $customer=new Customer; 
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$customer->customer_logo=$imgName;
 			$customer->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -47,7 +47,7 @@ class CustomerController extends Controller
         $customer->id=$request->cmbCustomerId; 
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+			$imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$customer->customer_logo=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}

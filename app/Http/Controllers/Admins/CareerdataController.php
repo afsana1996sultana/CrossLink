@@ -25,14 +25,14 @@ class CareerdataController extends Controller
         $career = Careerdata::find($id);
 
         if(isset($request->fileimg1)){
-            $img1Name = (rand(100,1000)).'.'.$request->fileimg1->extension();
+            $img1Name = time().(rand(100,1000)).'.'.$request->fileimg1->extension();
             $career->img1=$img1Name;
             $request->fileimg1->move(public_path('img'),$img1Name);
         }
 
 
         if(isset($request->fileimg2)){
-            $img2Name = (rand(100,1000)).'.'.$request->fileimg2->extension();
+            $img2Name = time().(rand(100,1000)).'.'.$request->fileimg2->extension();
             $career->img2=$img2Name;
             $request->fileimg2->move(public_path('img'),$img2Name);
         }

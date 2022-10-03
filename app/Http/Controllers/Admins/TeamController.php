@@ -24,7 +24,7 @@ class TeamController extends Controller
         $team->details=$request->txtDetails;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$team->img=$imgName;
 			$team->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -57,7 +57,7 @@ class TeamController extends Controller
         $team->details=$request->txtDetails;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+			$imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$team->img=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}

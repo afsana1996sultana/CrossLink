@@ -22,7 +22,7 @@ class ProductController extends Controller
 
         $product =DB::table('products')
              ->join('menus','menus.id', '=', 'products.category')
-             ->join('submenus','submenus.id', '=', 'products.sub_category')
+             ->leftjoin('submenus','submenus.id', '=', 'products.sub_category')
              ->leftjoin('childmenus','childmenus.id', '=', 'products.child_category')
              ->join('statuses','statuses.id', '=', 'products.status')
              ->select('products.*','menus.menu_name','submenus.submenu_name', 'childmenus.childmenu_name', 'statuses.s_name')
@@ -58,7 +58,7 @@ class ProductController extends Controller
         $product->title=$request->txtTitle;
         $product->slug=$request->txtSlug;
         $product->category=$request->txtCategory;
-        $product->sub_category=$request->txtSubcategory;
+        $product->sub_category=$request->sub_category;
         $product->child_category=$request->child_category;
         $product->long_description=$request->txtLongDescription;
         $product->short_desctiption=$request->txtShortDescription;
@@ -67,7 +67,7 @@ class ProductController extends Controller
         $product->deleted_at=$request->txtDeleted_at;
 
         if(isset($request->file_p_img)){
-            $p_imgName = (rand(100,1000)).'.'.$request->file_p_img->extension();
+            $p_imgName = time().(rand(100,1000)).'.'.$request->file_p_img->extension();
             $product->p_img=$p_imgName;
             $product->update();
             $request->file_p_img->move(public_path('img'),$p_imgName);
@@ -75,14 +75,14 @@ class ProductController extends Controller
 
 
         if(isset($request->file_otherimg1)){
-            $otherimg1Name = (rand(100,1000)).'.'.$request->file_otherimg1->extension();
+            $otherimg1Name = time().(rand(100,1000)).'.'.$request->file_otherimg1->extension();
             $product->other_img1=$otherimg1Name;
             $product->update();
             $request->file_otherimg1->move(public_path('img'),$otherimg1Name);
         }
 
         if(isset($request->file_otherimg2)){
-            $otherimg2Name = (rand(100,1000)).'.'.$request->file_otherimg2->extension();
+            $otherimg2Name = time().(rand(100,1000)).'.'.$request->file_otherimg2->extension();
             $product->other_img2=$otherimg2Name;
             $product->update();
             $request->file_otherimg2->move(public_path('img'),$otherimg2Name);
@@ -90,7 +90,7 @@ class ProductController extends Controller
 
 
         if(isset($request->file_otherimg3)){
-            $otherimg3Name = (rand(100,1000)).'.'.$request->file_otherimg3->extension();
+            $otherimg3Name = time().(rand(100,1000)).'.'.$request->file_otherimg3->extension();
             $product->other_img3=$otherimg3Name;
             $product->update();
             $request->file_otherimg3->move(public_path('img'),$otherimg3Name);
@@ -141,9 +141,7 @@ class ProductController extends Controller
         $product->category=$request->txtCategory;
         }
 
-        if(isset($request->txtSubcategory)){
-        $product->sub_category=$request->txtSubcategory;
-        } 
+        $product->sub_category=$request->sub_category;
 
         $product->child_category=$request->child_category;
 
@@ -165,27 +163,27 @@ class ProductController extends Controller
 
 
         if(isset($request->file_p_img)){
-            $p_imgName = (rand(100,1000)).'.'.$request->file_p_img->extension();
+            $p_imgName = time().(rand(100,1000)).'.'.$request->file_p_img->extension();
             $product->p_img=$p_imgName;
             $request->file_p_img->move(public_path('img'),$p_imgName);
         }
 
 
         if(isset($request->file_otherimg1)){
-            $otherimg1Name = (rand(100,1000)).'.'.$request->file_otherimg1->extension();
+            $otherimg1Name = time().(rand(100,1000)).'.'.$request->file_otherimg1->extension();
             $product->other_img1=$otherimg1Name;
             $request->file_otherimg1->move(public_path('img'),$otherimg1Name);
         }
 
         if(isset($request->file_otherimg2)){
-            $otherimg2Name = (rand(100,1000)).'.'.$request->file_otherimg2->extension();
+            $otherimg2Name = time().(rand(100,1000)).'.'.$request->file_otherimg2->extension();
             $product->other_img2=$otherimg2Name;
             $request->file_otherimg2->move(public_path('img'),$otherimg2Name);
         }
 
 
         if(isset($request->file_otherimg3)){
-            $otherimg3Name = (rand(100,1000)).'.'.$request->file_otherimg3->extension();
+            $otherimg3Name = time().(rand(100,1000)).'.'.$request->file_otherimg3->extension();
             $product->other_img3=$otherimg3Name;
             $request->file_otherimg3->move(public_path('img'),$otherimg3Name);
         }

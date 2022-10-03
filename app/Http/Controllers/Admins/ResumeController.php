@@ -37,7 +37,8 @@ class ResumeController extends Controller
         $resume->message=$request->txtMessage;
 
         if(isset($request->fileAttach)){
-			$attach_fileName = (rand(100,1000)).'.'.$request->fileAttach->getClientOriginalExtension();
+			//$attach_fileName = (rand(100,1000)).'.'.$request->fileAttach->getClientOriginalExtension();
+            $attach_fileName = time().(rand(100,1000)).'.'.$request->fileAttach->getClientOriginalExtension();
 			$resume->attach_file=$attach_fileName;
 			$request->fileAttach->move(public_path('img'),$attach_fileName);
 		}

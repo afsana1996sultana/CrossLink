@@ -26,7 +26,7 @@ class FooterController extends Controller
         $footer = Footer::find($id);
 
         if(isset($request->filelogo)){
-            $logoName = (rand(100,1000)).'.'.$request->filelogo->extension();
+            $logoName = time().(rand(100,1000)).'.'.$request->filelogo->extension();
             $footer->f_logo=$logoName;
             $request->filelogo->move(public_path('img'),$logoName);
         }

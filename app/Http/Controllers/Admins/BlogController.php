@@ -45,14 +45,14 @@ class BlogController extends Controller
         $blog->deleted_at=$request->txtDeleted_at;
 
         if(isset($request->file_blog_img)){
-            $blog_imgName = (rand(100,1000)).'.'.$request->file_blog_img->extension();
+            $blog_imgName = time().(rand(100,1000)).'.'.$request->file_blog_img->extension();
             $blog->blog_img=$blog_imgName;
             $blog->update();
             $request->file_blog_img->move(public_path('img'),$blog_imgName);
         }
 
         if(isset($request->file_banner_img)){
-            $banner_imgName = (rand(100,1000)).'.'.$request->file_banner_img->extension();
+            $blog_imgName = time().(rand(100,1000)).'.'.$request->file_blog_img->extension();
             $blog->banner_img=$banner_imgName;
             $blog->update();
             $request->file_banner_img->move(public_path('img'),$banner_imgName);

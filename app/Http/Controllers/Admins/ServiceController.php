@@ -24,7 +24,7 @@ class ServiceController extends Controller
         $service->description=$request->txtDescription;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$service->img=$imgName;
 			$service->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -57,7 +57,7 @@ class ServiceController extends Controller
         $service->description=$request->txtDescription;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+			$imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$service->img=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}

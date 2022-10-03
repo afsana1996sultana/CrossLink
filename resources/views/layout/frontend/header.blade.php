@@ -1,30 +1,5 @@
 <!-- Main Header-->
-<header class="main-header header-style-one">
-    <!-- Header Top -->
-    <div class="header-top">
-        <div class="auto-container clearfix">
-            <!--Top Left-->
-            <div class="top-left pull-left">
-                <ul class="links-nav clearfix">
-                    @foreach ($topbar as $val)
-                    <li><span class="fa fa-check-square-o"></span> {{ $val->suplier }}</li>
-                    <li><span class="fa fa-support"></span> {{ $val->certificate }}</li>
-                    <li><span class="fa fa-bell-o"></span> {{ $val->service }}</li>
-                    @endforeach
-                </ul>
-            </div>
-             <!--Top Right-->
-             <div class="top-right pull-right">
-                <ul class="links-nav clearfix">
-                    @foreach($sociallink as $val)
-                        <li><a href="{{$val->slug}}"><span class="{{$val->icon}}"></span></a></li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Header Top End -->
-    
+<header class="main-header header-style-one">  
     <!--Header-Upper-->
     <div class="header-upper">
         <div class="auto-container">
@@ -36,12 +11,8 @@
                 
                 <div class="pull-right upper-right clearfix">
                     <!--Info Box-->
-                    <div class="upper-column info-box">
-                        <div class="icon-box"><span class="flaticon-technology"></span></div>
-                        <ul>
-                            <li><strong>{{ $val->phone }}</strong></li>
-                            <li>{{ $val->email }}</li>
-                        </ul>
+                    <div class="pull-left logo-outer">
+                        <div class="logo"><a href="{{url('/')}}"><img src="{{url('frontend/images/Channel.webp')}}" alt="AAB" title="AAB"></a></div>
                     </div>
                 </div> 
                 @endforeach

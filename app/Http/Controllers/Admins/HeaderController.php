@@ -25,7 +25,7 @@ class HeaderController extends Controller
         $header = Header::find($id);
 
         if(isset($request->filelogo)){
-            $logoName = (rand(100,1000)).'.'.$request->filelogo->extension();
+            $logoName = time().(rand(100,1000)).'.'.$request->filelogo->extension();
             $header->logo=$logoName;
             $request->filelogo->move(public_path('img'),$logoName);
         }

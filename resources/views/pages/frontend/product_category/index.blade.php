@@ -1,5 +1,11 @@
 @extends('layout.frontend.master')
 @section('main_content')
+<style>
+.services-column-two {
+    position: relative;
+    padding: 50px 0px 80px 0px;
+}
+</style>
 
 <!--Page Title-->
 <section class="page-title" style="background-image:url('/frontend/images/background/featured-2-bg.jpg');">

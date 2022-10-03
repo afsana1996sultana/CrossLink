@@ -22,7 +22,7 @@ class FrequentlyaskedController extends Controller
         $frequently->answer=$request->txtAnswer;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$frequently->img=$imgName;
 			$frequently->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -54,7 +54,7 @@ class FrequentlyaskedController extends Controller
         $frequently->answer=$request->txtAnswer;
 
         if(isset($request->filePhoto)){
-            $imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
             $frequently->img=$imgName;
             $request->filePhoto->move(public_path('img'),$imgName);
         }

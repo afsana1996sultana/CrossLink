@@ -21,7 +21,7 @@ class ProductsubcategoryController extends Controller
 
         $data['ProductData'] = Product::where('products.child_category', $ChildmenuId->id)
         ->join('menus','menus.id', '=', 'products.category')
-        ->join('submenus','submenus.id', '=', 'products.sub_category')
+        ->leftjoin('submenus','submenus.id', '=', 'products.sub_category')
         ->join('childmenus','childmenus.id', '=', 'products.child_category')
         ->select('menus.menu_name', 'submenus.submenu_name', 'childmenus.childmenu_name', 'products.*')
         ->first();

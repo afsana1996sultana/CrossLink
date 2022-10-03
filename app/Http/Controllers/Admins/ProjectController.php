@@ -23,7 +23,7 @@ class ProjectController extends Controller
         $project->description=$request->txtDescription;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$project->img=$imgName;
 			$project->update();
 			$request->filePhoto->move(public_path('img'),$imgName);
@@ -54,7 +54,7 @@ class ProjectController extends Controller
         $project->description=$request->txtDescription;
 
         if(isset($request->filePhoto)){
-			$imgName = (rand(100,1000)).'.'.$request->filePhoto->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
 			$project->img=$imgName;
 			$request->filePhoto->move(public_path('img'),$imgName);
 		}
