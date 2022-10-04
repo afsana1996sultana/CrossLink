@@ -122,14 +122,9 @@ class ProductController extends Controller
         // ]);
 
         $product = Product::find($id);
-
         
-
-            $product->child_category=$request->child_category;
+        $product->child_category=$request->child_category;
  
-
-
-
         if(isset($request->txtProductName)){
         $product->p_name=$request->txtProductName;
         }
