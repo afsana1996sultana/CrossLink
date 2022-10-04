@@ -28,15 +28,15 @@
     <div class="row">
         <div class="col-sm-12">
             <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
-                <thead>
-                    <tr>
-                      <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">No</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Email</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Created At</th>
-                      <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Action</th>
-                    </tr>
-                </thead>
+				<thead>
+					<tr>
+						<th class="sorting sorting_asc">SN</th>
+						<th class="sorting">Name</th>
+						<th class="sorting">Email</th>
+						<th class="sorting">Created At</th>
+						<th class="sorting">Action</th>
+					</tr>
+				</thead>
                 <tbody> 
                     @forelse ($users as $users)
                     <tr class="odd">
@@ -52,10 +52,10 @@
 							</div>
                         </td>   
                     </tr>
+					@empty
+						<div colspan="14">No records found</div>
+					@endforelse
                 </tbody>
-                @empty
-					<tr><td colspan="14">No records found</td></tr>
-				@endforelse
             </table>
         </div>
     </div>

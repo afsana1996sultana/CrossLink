@@ -117,11 +117,16 @@ class ProductController extends Controller
 
     public function update(Request $request,$id){
 
-        $validated = $request->validate([
-            'child_category' => 'nullable|unique:products',
-        ]);
+        // $validated = $request->validate([
+        //     'child_category' => 'nullable|unique:products',
+        // ]);
 
         $product = Product::find($id);
+
+        
+
+            $product->child_category=$request->child_category;
+ 
 
 
 
@@ -143,7 +148,7 @@ class ProductController extends Controller
 
         $product->sub_category=$request->sub_category;
 
-        $product->child_category=$request->child_category;
+       
 
         if(isset($request->txtLongDescription)){
         $product->long_description=$request->txtLongDescription;
