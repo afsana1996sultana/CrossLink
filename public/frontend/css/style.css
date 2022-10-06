@@ -6437,6 +6437,7 @@ img{
 .content-side .comments-area .comment .comment-inner{
 	position:relative;
 	padding-left:120px;	
+	padding-bottom: 50px;
 }
 
 .content-side .comments-area .comment .author-thumb{

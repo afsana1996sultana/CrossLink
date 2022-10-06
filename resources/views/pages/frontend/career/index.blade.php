@@ -1,12 +1,17 @@
 @extends('layout.frontend.master')
 @section('main_content')
 <style>
- .news-section{
+.industry-section {
     position: relative;
     padding: 50px 0px 70px 0px;
- }  
+}
+
+.news-section{
+    position: relative;
+    padding: 50px 0px 70px 0px;
+}  
  
- .two-col-section {
+.two-col-section {
     position: relative;
     padding: 30px 0px 40px 0px;
 }

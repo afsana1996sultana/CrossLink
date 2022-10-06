@@ -33,10 +33,12 @@ use App\Http\Controllers\Frontend\AutomationprojectController;
 use App\Http\Controllers\Frontend\ProjectdoneController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\NewsController;
+use App\Http\Controllers\Frontend\AllserviceController;
 use App\Http\Controllers\Frontend\ProductcategoryController;
 use App\Http\Controllers\Frontend\ProductsubcategoryController;
 use App\Http\Controllers\Frontend\ProductdetailController;
 use App\Http\Controllers\Frontend\BlogdetailController;
+use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\ServicedetailController;
 use App\Http\Controllers\Admins\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -105,6 +107,10 @@ Route::get('/projects-done',[ProjectdoneController::class,'index' ]);
 Route::get('/projects',[ProjectdoneController::class,'index' ]);
 
 
+////////////////////Services/////////////////////////
+Route::get('/services',[AllserviceController::class,'index' ]);
+
+
 ///////////////////////Product/////////////////////////////////
 Route::resource('product', App\Http\Controllers\Admins\ProductController::class);
 Route::delete('delete-product', [ProductController::class, 'destroy']);
@@ -130,25 +136,20 @@ Route::get('blog_details/{slug}', [BlogdetailController::class, 'blog_details'])
 Route::get('service_details/{slug}', [ServicedetailController::class, 'service_details']);
 
 
-////////////////////Message/////////////////////////
-Route::resource('message', App\Http\Controllers\Admins\MessageController::class);
-Route::get('show-message/{id}',[MessageController::class,'show' ]);
-Route::delete('delete-message',[MessageController::class,'destroy' ]);
+////////////////////Message-Post/////////////////////////
 Route::post('message_store',[MessageController::class,'store' ])->name('message_store');
 
 
-////////////////////Newsletter/////////////////////////
-Route::resource('newsletter', App\Http\Controllers\Admins\NewsletterController::class);
-Route::get('show-newsletter/{id}',[NewsletterController::class,'show' ]);
-Route::delete('delete-newsletter',[NewsletterController::class,'destroy' ]);
+////////////////////Newsletter-Post/////////////////////////
 Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
 
 
-////////////////////Resume/////////////////////////
-Route::resource('resume', App\Http\Controllers\Admins\ResumeController::class);
-Route::get('show-resume/{id}',[ResumeController::class,'show' ]);
-Route::delete('delete-resume',[ResumeController::class,'destroy' ]);
+////////////////////Resume-Post/////////////////////////
 Route::post('resume_store',[ResumeController::class,'store' ])->name('resume_store');
+
+
+////////////////////Comment-Post/////////////////////////
+Route::post('/comment-post', [CommentController::class, 'Store'])->name('comment-post');
 
 
 Route::get('admin', function(){
@@ -169,6 +170,32 @@ Route::resource('status', App\Http\Controllers\Admins\StatusController::class);
 Route::get('edit-status/{id}', [StatusController::class, 'edit']);
 Route::put('status-update', [StatusController::class, 'update']);
 Route::delete('delete-status', [StatusController::class, 'destroy']);
+
+
+////////////////////Message/////////////////////////
+Route::resource('message', App\Http\Controllers\Admins\MessageController::class);
+Route::get('show-message/{id}',[MessageController::class,'show' ]);
+Route::delete('delete-message',[MessageController::class,'destroy' ]);
+
+
+////////////////////Newsletter/////////////////////////
+Route::resource('newsletter', App\Http\Controllers\Admins\NewsletterController::class);
+Route::get('show-newsletter/{id}',[NewsletterController::class,'show' ]);
+Route::delete('delete-newsletter',[NewsletterController::class,'destroy' ]);
+
+
+
+////////////////////Resume/////////////////////////
+Route::resource('resume', App\Http\Controllers\Admins\ResumeController::class);
+Route::get('show-resume/{id}',[ResumeController::class,'show' ]);
+Route::delete('delete-resume',[ResumeController::class,'destroy' ]);
+
+
+///////////////////////Comment/////////////////////////////////
+Route::resource('comment', App\Http\Controllers\Frontend\CommentController::class);
+Route::get('edit-comment/{id}', [CommentController::class, 'edit']);
+Route::put('comment-update', [CommentController::class, 'update']);
+Route::delete('delete-comment', [CommentController::class, 'destroy']);
 
 
 

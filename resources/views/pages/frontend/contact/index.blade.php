@@ -1,5 +1,11 @@
 @extends('layout.frontend.master')
 @section('main_content')
+<style>
+    .contact-info-section {
+    position: relative;
+    padding: 100px 0px 10px;
+}
+</style>
 <!--Page Title-->
 <section class="page-title" style="background-image:url('frontend/images/background/featured-2-bg.jpg');">
     <div class="auto-container">

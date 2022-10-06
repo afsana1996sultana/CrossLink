@@ -49,58 +49,37 @@
                     
                     <!--Comments Area-->
                     <div class="comments-area">
-                        <h2 class="total-comments">Comments (03)</h2>
+                        <h2 class="total-comments">Comments</h2>
                         <div class="comment-box">
                             <div class="comment">
+                                @foreach($comments as $val)
                                 <div class="comment-inner">
                                     <div class="author-thumb"><img src="{{url('frontend/images/resource/blog-image-17.jpg')}}" alt=""></div>
                                     <!--comment-content-->
-                                    <div class="comment-content">
+                                    <div class="comment-content">  
                                         <div class="comment-header clearfix">
-                                            <h4>George Mc Mahon</h4>
+                                            <h4>{{$val->name}}</h4>
                                             <div class="comment-info">{{ date('M d, Y', strtotime($blogData->published_date)) }} </div>
                                         </div>
-                                        <div class="text">The Love Boat promises something for everyone be from me and the card attached would say federal impossible to this time there is no stopping us the Love Boat soon run.</div>
-                                    </div>     
+                                        <div class="text">{!! $val->comments !!}</div>  
+                                    </div>    
                                 </div>
-                            </div>
-                            
-                            <div class="comment reply-comment">
-                                <div class="comment-inner">
-                                    <div class="author-thumb"><img src="{{url('frontend/images/resource/blog-image-17.jpg')}}" alt=""></div>
-                                    <!--comment-content-->
-                                    <div class="comment-content">
-                                        <div class="comment-header clearfix">
-                                            <h4>Stephen</h4>
-                                            <div class="comment-info">{{ date('M d, Y', strtotime($blogData->published_date)) }}</div>
-                                        </div>
-                                        <div class="text">The Love Boat promises something for everyone be from me and the card attached to would say federal impossible to this time there is no run.</div>
-                                    </div>
-                                </div>
-                            </div>  
+                                @endforeach 
+                            </div> 
                         </div>
                     </div>
                 
                     <!-- Comment Form -->
                     <div class="comment-form wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="group-title"><h2>Post your Comments</h2></div>
+                        <div class="group-title"><h2>Leave your Comments</h2></div>
                         <!--Comment Form-->
-                        <form method="post" action="">
-                            <div class="row clearfix">
-                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                    <input type="text" name="username" placeholder="Name">
-                                </div>
-                                
-                                <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                    <input type="email" name="email" placeholder="Email id">
-                                </div>
-                                
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <input type="email" name="Subject" placeholder="Subject">
-                                </div>
-                                
+                        <form action="{{url('comment-post')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row clearfix">  
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <textarea name="message" placeholder="Comment"></textarea>
+                                    <input type="hidden" value="{{$blogData->id}}" id="cmbBlogId" name="cmbBlogId" >
+                                    <label for="review_comment">Comment </label>
+                                    <textarea name="txtComment" id="txtComment"></textarea>
                                 </div>
                                 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">

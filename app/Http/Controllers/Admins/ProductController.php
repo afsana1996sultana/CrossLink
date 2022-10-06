@@ -52,7 +52,6 @@ class ProductController extends Controller
             'child_category' => 'nullable|unique:products',
         ]);
 
-
         $product=new Product; 
         $product->p_name=$request->txtProductName;
         $product->title=$request->txtTitle;
@@ -142,8 +141,6 @@ class ProductController extends Controller
         }
 
         $product->sub_category=$request->sub_category;
-
-       
 
         if(isset($request->txtLongDescription)){
         $product->long_description=$request->txtLongDescription;

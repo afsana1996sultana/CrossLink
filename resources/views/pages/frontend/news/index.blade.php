@@ -3,7 +3,7 @@
 <style>
     .two-col-section {
     position: relative;
-    padding: 100px 0px 40px 0px;
+    padding: 50px 0px 40px 0px;
 }
 </style>
 
