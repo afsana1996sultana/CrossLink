@@ -32,6 +32,15 @@ class UserController extends Controller
     }
 
 
+    public function show($id){
+		$users=User::find($id);
+		return response()->json([
+			'status'=>200,
+			'users'=>$users
+		]);
+	}
+
+
     public function edit($id){
 		$users=User::find($id);
 		return response()->json([

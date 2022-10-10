@@ -46,7 +46,8 @@
                         <td>{{$users-> created_at}}</td>
                         <td class="text-right py-0 align-middle">
 							<div class="btn-group btn-group-sm">
-                                <a class="btn btn-info" href="#" data-toggle="modal" data-target="#view_users"><i class="fas fa-eye"></i></a>&nbsp;
+                                <!-- <a class="btn btn-info" href="#" data-toggle="modal" data-target="#view_users"><i class="fas fa-eye"></i></a>&nbsp; -->
+								<button type="button" value="{{$users->id}}" class="btn btn-info" id="usersshBtn" ><i class="fas fa-eye" ></i> </button>&nbsp;
 								<button type="button" value="{{$users->id}}" class="btn btn-primary" id="editusers" ><i class="fas fa-pencil-alt" ></i> </button>&nbsp;
                                 <button type="button" value="{{$users->id}}" class="btn btn-danger" id="usersDbtn" ><i class="fas fa-trash"></i> </button>
 							</div>
@@ -59,7 +60,7 @@
             </table>
         </div>
     </div>
-    <!-- Add User Modal -->
+<!-- Add User Modal -->
 <div id="add_users" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
@@ -129,6 +130,53 @@
 	</div>
 </div>
 <!-- /Add User Modal -->
+<!-- show User Modal -->
+<div id="show___users" class="modal custom-modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Show user</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Name:&nbsp;</label>
+							<div class="" id="ShName"></div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Email:&nbsp;</label>
+							<div class="" id="ShEmail"></div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Password:&nbsp;</label>
+							<div type="password" id="ShPassword"></div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Role Id:&nbsp;</label>
+							<div class="" id="ShRoleId"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /show User Modal -->
 <!-- Edit User Modal -->
 <div id="editModal" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -262,9 +310,30 @@
 				}
 			});
 		});
+
+
+		$(document).on('click','#usersshBtn',function(){
+			//  alert("ok");
+
+			var userssh_id=$(this).val();
+			// alert(userssh_id);
+
+			$('#show___users').modal('show');
+			$.ajax({
+				type: "GET",
+				url: "/show-users/"+userssh_id,
+				success:function(response){
+					console.log(response);
+					$('#cmbUserSHId').html(userssh_id);
+					$('#ShName').html(response.users.name);
+					$('#ShEmail').html(response.users.email);
+					$('#ShPassword').html(response.users.password);
+					$('#ShRoleId').html(response.users.role_id);
+
+				}
+			});
+		});
     
 	});
 </script>
-
-
 @endsection

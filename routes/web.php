@@ -357,6 +357,7 @@ Route::delete('delete-all-service', [ServiceController::class, 'destroy']);
 Route::resource('users', UserController::class);
 Route::get('edit-users/{id}',[UserController::class,'edit' ]);
 Route::put('users-update',[UserController::class,'update' ]);
+Route::get('show-users/{id}',[UserController::class,'show' ]);
 Route::delete('delete-users',[UserController::class,'destroy' ]);
 
 

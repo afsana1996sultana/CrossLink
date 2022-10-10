@@ -1,13 +1,13 @@
 @extends('layout.frontend.master')
 @section('main_content')
 <style>
-    .industry-section {
+.industry-section {
     position: relative;
     padding: 40px 0px 0px 0px;
 }
-.image img {
+.customeImg img {
     height: 350px; 
-    width: 555px;
+    width: 560px;
     object-fit: contain;
     padding-top: 20px;
 }
@@ -38,11 +38,11 @@
 <section class="industry-section">
     <div class="auto-container">
         <div class="row clearfix">
-            <div class="column left-column col-md-6 col-sm-12 col-xs-12">
+            <div class="column left-column col-md-6 col-sm-12 col-xs-12" style="padding-top: 60px;">
                 <!--video-box-->
                 <div class="box-column wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <a class="lightbox-image" href="" title="Image Caption Here">
-                    <div class="image"> 
+                    <div class="customeImg">
                         <img src="{{ asset('img/' . $serviceData->img) }}" alt="" /></a>
                     </div>
                 </div>

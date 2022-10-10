@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{{url('/admin')}}" class="brand-link">
       <!-- <img src="{{url('backend/img/afsana.jpg')}}" alt="" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <span class="brand-text font-weight-light">AdminPanel</span>
+      <span class="brand-text font-weight-light">CrossLink</span>
     </a>
 
     <!-- Sidebar -->

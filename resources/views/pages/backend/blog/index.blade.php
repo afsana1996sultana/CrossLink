@@ -59,7 +59,8 @@
                                         </td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
-                                                <a href="{{url('blog-list/'.$blog->id.'/edit')}}" class="btn btn-primary"><i class="fas fa-pencil-alt" ></i></a>&nbsp;
+                                                <a href="{{URL::to('blog_details/'.$blog->slug)}}" class="btn btn-primary"><i class="fa fa-eye"></i></a>&nbsp;
+                                                <a href="{{url('blog-list/'.$blog->id.'/edit')}}" class="btn btn-warning"><i class="fas fa-pencil-alt" ></i></a>&nbsp;
                                                 <button type="button" value="{{$blog->id}}" class="btn btn-danger" id="blogDbtn" ><i class="fas fa-trash"></i> </button>
                                             </div>
                                         </td>   
