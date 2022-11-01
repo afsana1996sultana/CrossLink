@@ -5,13 +5,16 @@
 <head>
 <meta charset="utf-8">
 <title>CrossLink</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="{{url('frontend/images/crosslink_favicon.png')}}" type="image/x-icon">
+<link rel="icon" href="{{url('frontend/images/crosslink_favicon.png')}}" type="image/x-icon">
+
 <!-- Stylesheets -->
 <link href="{{url('frontend/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{url('frontend/css/revolution-slider.css')}}" rel="stylesheet">
 <link href="{{url('frontend/css/style.css')}}" rel="stylesheet">
-<!--Favicon-->
-<link rel="shortcut icon" href="{{url('frontend/asset/images/favicon.ico')}}" type="image/x-icon">
-<link rel="icon" href="{{url('frontend/asset/images/favicon.ico')}}" type="image/x-icon">
+
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
