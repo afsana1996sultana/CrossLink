@@ -79,14 +79,14 @@ class AppServiceProvider extends ServiceProvider
        });
 
 
-       View::composer('*', function($view7)
+       View::composer('*', function($view6)
        {
         $data=Usefulllink::all(); 
         View::share('usefulllink', $data);
        });
 
 
-       View::composer('*', function($view8)
+       View::composer('*', function($view7)
        {
         $data=Sociallink::all(); 
         View::share('sociallink', $data);
