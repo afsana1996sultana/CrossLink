@@ -27,31 +27,46 @@
                         <form action="{{url('header/1')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') 
-                            <div class="form-group col-12">
-                                <label>Current Logo</label>
-                                <div>
-                                    <img src="{{asset('img/'.$header->logo)}}" alt="" sizes="" srcset="" height="60px" width="200px"> 
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label>Current Logo-1</label>
+                                    <div>
+                                        <img src="{{asset('img/'.$header->logo)}}" alt="" sizes="" srcset="" height="60px" width="200px"> 
+                                    </div>
+
+                                    <div class="pt-3">
+                                        <label>New Logo</label>
+                                        <input type="file" name="filelogo" class="form-control-file">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group col-12">
-                                <label>New Logo</label>
-                                <input type="file" name="filelogo" class="form-control-file">
-                            </div>
+                                <div class="form-group col-6">
+                                    <label>Current Logo-2</label>
+                                    <div>
+                                        <img src="{{asset('img/'.$header->logo2)}}" alt="" sizes="" srcset="" height="60px" width="200px"> 
+                                    </div>
 
-                            <div class="form-group">
-                                <label for="">Time</label>
-                                <input type="text" name="txtTime" class="form-control" value="{{$header->time}}">
-                            </div>
+                                    <div class="pt-3">
+                                        <label>New Logo</label>
+                                        <input type="file" name="filelogo2" class="form-control-file">
+                                    </div>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="">Phone</label>
-                                <input type="text" name="txtPhone" class="form-control" value="{{$header->phone}}">
-                            </div>
+                                
+                                <div class="form-group col-12">
+                                    <label for="">Time</label>
+                                    <input type="text" name="txtTime" class="form-control" value="{{$header->time}}">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="txtEmail" class="form-control" value="{{$header->email}}">
+                                <div class="form-group col-12">
+                                    <label for="">Phone</label>
+                                    <input type="text" name="txtPhone" class="form-control" value="{{$header->phone}}">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="">Email</label>
+                                    <input type="email" name="txtEmail" class="form-control" value="{{$header->email}}">
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>

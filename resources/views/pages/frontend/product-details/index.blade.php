@@ -99,7 +99,7 @@
                     <div class="call-to-action-four" style="background-image:url('frontend/images/resource/quote-widget.jpg');">
                         <div class="title">Any Questions related Solutions? Call us</div>
                         
-                        <div class="number"><span class="flaticon-phone-receiver"></span> +001-345-6789-00</div>
+                        <div class="number"><span class="flaticon-phone-receiver"></span> +88-01799396835</div>
                         <a class="theme-btn btn-style-one" href="{{url('/contact-us')}}">GET QUOTES</a>
                     </div>
                 </aside>

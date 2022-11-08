@@ -30,17 +30,10 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{url('/contactus')}}" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>Contact Us</p>   
-            </a>
-          </li>
-
-          <li class="nav-item">
               <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fa fa-user"></i>
                 <p>
-                  Inbox
+                Contact Us
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>

@@ -12,7 +12,7 @@
                 <div class="pull-right upper-right clearfix">
                     <!--Info Box-->
                     <div class="pull-left logo-outer">
-                        <div class="logo"><a href="{{url('/')}}"><img src="{{url('frontend/images/Channel.webp')}}" alt="AAB" title="AAB"></a></div>
+                        <div class="logo"><a href="{{url('/')}}"><img src="{{ asset('img/' . $val->logo2) }}" alt="AAB" title="AAB"></a></div>
                     </div>
                 </div> 
                 @endforeach
@@ -92,7 +92,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="{{url('/')}}" class="img-responsive"><img src="{{url('frontend/images/logo-small1.png')}}" alt="CrosLink" title="CrosLink"></a>
+                <a href="{{url('/')}}" class="img-responsive"><img src="{{url('frontend/images/crooslink.png')}}" alt="CrosLink" title="CrosLink"></a>
             </div>
             
             <!--Right Col-->

@@ -30,6 +30,13 @@ class HeaderController extends Controller
             $request->filelogo->move(public_path('img'),$logoName);
         }
 
+
+        if(isset($request->filelogo2)){
+            $logo2Name = time().(rand(100,1000)).'.'.$request->filelogo2->extension();
+            $header->logo2=$logo2Name;
+            $request->filelogo2->move(public_path('img'),$logo2Name);
+        }
+
         if(isset($request->txtTime)){
             $header->time=$request->txtTime;
           }

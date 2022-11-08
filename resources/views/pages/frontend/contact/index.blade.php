@@ -39,7 +39,7 @@
                     </div>
                     
                     <h3>Visit Us</h3>
-                    <div class="text">Sector #09, Road #02, House #27,Uttara,<br>Dhaka-1230, Bangladesh</div>
+                    <div class="text">House #20, Road #3F, Sector #9, Uttara,<br>Dhaka-1230, Bangladesh</div>
                 </div>
             </div>
             
@@ -51,7 +51,7 @@
                     </div>
                     
                     <h3>Mail Us</h3>
-                    <div class="text">support@crosslink.com<br>info@crosslink.com</div>
+                    <div class="text">syed@crosslink.com<br>info@crosslink.com</div>
                 </div>
             </div>
             
@@ -63,7 +63,7 @@
                     </div>
                     
                     <h3>Call Us</h3>
-                    <div class="text">(+01) 22-333-4444-000<br>(+01) 33-444-5555-001</div>
+                    <div class="text">+88-01799396835<br>(+88) 01799396835</div>
                 </div>
             </div>
         </div>

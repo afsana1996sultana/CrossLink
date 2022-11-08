@@ -16,6 +16,7 @@ class CreateHeadersTable extends Migration
         Schema::create('headers', function (Blueprint $table) {
             $table->bigIncrements('id')->primary;
             $table->string('logo');
+            $table->string('logo2');
             $table->string('time');
             $table->string('phone');
             $table->string('email');

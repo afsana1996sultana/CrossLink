@@ -115,7 +115,7 @@
                     <!--Call TO Action-->
                     <div class="sidebar-widget call-to-action-four wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url('/frontend/images/resource/quote-widget.jpg');">
                         <div class="title">Any Questions related Industrial Solution? Call us</div>
-                        <div class="number"><span class="fa fa-phone"></span> +001-345-6789-00</div>
+                        <div class="number"><span class="fa fa-phone"></span> +88-01799396835</div>
                         <a class="theme-btn btn-style-one" href="{{url('/contact-us')}}">GET QUOTES</a>
                     </div>
 
